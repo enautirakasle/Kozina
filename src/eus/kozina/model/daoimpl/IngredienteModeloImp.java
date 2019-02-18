@@ -1,9 +1,11 @@
 package eus.kozina.model.daoimpl;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 
 import eus.kozina.model.bean.Ingrediente;
 import eus.kozina.model.dao.IngredienteModelo;
@@ -40,7 +42,22 @@ public class IngredienteModeloImp extends Conector implements IngredienteModelo 
 
 	@Override
 	public Ingrediente select(int id) {
-		// TODO Auto-generated method stub
+		
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("select * from ingredientes where id=?");
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				Ingrediente ingrediente = new Ingrediente(rs.getString("nombre"));
+				ingrediente.setId(rs.getInt("id"));
+				ingrediente.setDescripcion(rs.getString("descripcion"));
+				return ingrediente;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 		return null;
 	}
 
