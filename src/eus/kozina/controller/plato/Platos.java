@@ -33,7 +33,6 @@ public class Platos extends HttpServlet {
 		request.setAttribute("platos", platoModelo.selectAll());
 		request.getRequestDispatcher("plato/verTodos.jsp").forward(request, response);
 
-		
 	}
 
 	/**
