@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import eus.kozina.model.daoimpl.IngredienteModeloImp;
+
 /**
  * Servlet implementation class ver
  */
@@ -26,8 +28,9 @@ public class Ver extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int id = Integer.parseInt(request.getParameter("id"));
+		request.setAttribute("ingrediente", new IngredienteModeloImp().select(id));
+		request.getRequestDispatcher("/ingrediente/ver.jsp").forward(request, response);
 	}
 
 	/**
