@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Ver - Ingrediente</title>
 </head>
 <body>
 	<table>
@@ -22,5 +22,8 @@
 			<td>${ingrediente.descripcion}</td>
 		</tr>
 	</table>
+	<a href="${pageContext.request.contextPath}/ingrediente/editar?id=${ingrediente.id}">Editar</a>
+	<a href="${pageContext.request.contextPath}/ingrediente/eliminar?id=${ingrediente.id}">Eliminar</a>
+	<a href="${pageContext.request.contextPath}/ingredientes">Volver</a>
 </body>
 </html>
