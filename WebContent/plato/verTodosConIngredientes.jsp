@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Platos</title>
 </head>
 <body>
 	<table border="1">
@@ -31,8 +31,8 @@
 					<td colspan="4">
 						<b>Ingredientes</b>
 						<ul>
-						<c:forEach items="${plato.ingredientes}" var="ingrediente">
-							<li><a href="ingrediente/ver?id=${ingrediente.id}">${ingrediente.nombre}</a></li>
+						<c:forEach items="${plato.alimentos}" var="alimento">
+							<li><a href="alimento/ver?id=${alimento.id}">${alimento.nombre}</a></li>
 						</c:forEach>
 						</ul>
 					</td>

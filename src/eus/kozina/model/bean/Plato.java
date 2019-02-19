@@ -9,7 +9,7 @@ public class Plato {
 	private String descripcion;
 	private String elavoracion;
 	
-	private ArrayList<Ingrediente> ingredientes;
+	private ArrayList<Alimento> alimentos;
 	
 	public Plato(String nombre) {
 		this.nombre = nombre;
@@ -46,14 +46,16 @@ public class Plato {
 	public void setElavoracion(String elavoracion) {
 		this.elavoracion = elavoracion;
 	}
-	
-	public ArrayList<Ingrediente> getIngredientes() {
-		return ingredientes;
+
+	public ArrayList<Alimento> getAlimentos() {
+		return alimentos;
 	}
 
-	public void setIngredientes(ArrayList<Ingrediente> ingredientes) {
-		this.ingredientes = ingredientes;
+	public void setAlimentos(ArrayList<Alimento> alimentos) {
+		this.alimentos = alimentos;
 	}
+	
+
 
 
 	

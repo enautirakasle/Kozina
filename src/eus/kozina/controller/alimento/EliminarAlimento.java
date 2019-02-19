@@ -1,4 +1,4 @@
-package eus.kozina.controller.ingrediente;
+package eus.kozina.controller.alimento;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,36 +7,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.daoimpl.IngredienteModeloImp;
+import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
- * Servlet implementation class ingredientes
+ * Servlet implementation class eliminar
  */
-@WebServlet("/ingredientes")
-public class Ingredientes extends HttpServlet {
+@WebServlet("/alimento/eliminar")
+public class EliminarAlimento extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Ingredientes() {
+    public EliminarAlimento() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TODO  hau hobeto beste lehio baten, ingredinte bat ezabatzean errorea dagoenean gertatzen da
-		String error = request.getParameter("error");
-		if(error != null) {
-			request.setAttribute("error", error);
-		}
+		int id= Integer.parseInt(request.getParameter("id"));
+		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
+		alimentoModelo.delete(id);
 		
+		request.setAttribute("alimentos", alimentoModelo.selectAll());
 		
-		IngredienteModeloImp ingredienteModelo =new IngredienteModeloImp();
-		request.setAttribute("ingredientes", ingredienteModelo.selectAll());
-		request.getRequestDispatcher("ingrediente/verTodos.jsp").forward(request, response);
 	}
 
 	/**

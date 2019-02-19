@@ -5,19 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Editar - Ingrediente</title>
+<title>Editar - alimento</title>
 </head>
 <body>
-	<form action="ingrediente/cambiar" method="post">
-		<input type="hidden" name="id" value="${ingrediente.id}"/>
+	<form action="alimento/cambiar" method="post">
+		<input type="hidden" name="id" value="${alimento.id}"/>
 		<table>
 			<tr>
 				<td>Nombre:</td>
-				<td><input type="text" name="nombre" value="${ingrediente.nombre}"/></td>
+				<td><input type="text" name="nombre" value="${alimento.nombre}"/></td>
 			</tr>
 			<tr>
 				<td>Descripción:</td>
-				<td><input type="text" name="descripcion" value="${ingrediente.descripcion}"/></td>
+				<td><input type="text" name="descripcion" value="${alimento.descripcion}"/></td>
 			</tr>
 		</table>
 		<input type="submit" value="cambiar" name="cambiar"/>

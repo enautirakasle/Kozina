@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import eus.kozina.model.Conector;
-import eus.kozina.model.bean.Ingrediente;
+import eus.kozina.model.bean.Alimento;
 import eus.kozina.model.bean.Plato;
 import eus.kozina.model.dao.PlatoModelo;
 

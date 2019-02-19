@@ -1,4 +1,4 @@
-package eus.kozina.controller.ingrediente;
+package eus.kozina.controller.alimento;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,29 +7,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.daoimpl.IngredienteModeloImp;
-
 /**
- * Servlet implementation class ver
+ * Servlet implementation class editar
  */
-@WebServlet("/ingrediente/ver")
-public class VerIngrediente extends HttpServlet {
+@WebServlet("/alimento/editar")
+public class EditarAlimento extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public VerIngrediente() {
+    public EditarAlimento() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("ingrediente", new IngredienteModeloImp().select(id));
-		request.getRequestDispatcher("/ingrediente/ver.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.daoimpl.IngredienteModeloImp;
+import eus.kozina.model.daoimpl.AlimentoModeloImp;
 import eus.kozina.model.daoimpl.PlatoModeloImp;
 
 /**

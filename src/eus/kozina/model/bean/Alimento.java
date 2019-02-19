@@ -1,12 +1,12 @@
 package eus.kozina.model.bean;
 
-public class Ingrediente{
+public class Alimento{
 
 	private int id;
 	private String nombre;
 	private String descripcion;
 	
-	public Ingrediente(String nombre) {
+	public Alimento(String nombre) {
 		super();
 		this.nombre = nombre;
 	}

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ingredientes - Eskatza</title>
+<title>Alimentos - Eskatza</title>
 </head>
 <body>
 <!-- igrediente bat ezabatzen denean errore bat jaurtitzen da -->
@@ -20,15 +20,15 @@ ${error}
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${ingredientes}" var="ingrediente">
+			<c:forEach items="${alimentos}" var="alimento">
 				<tr>
-					<td>${ingrediente.id}</td>
-					<td>${ingrediente.nombre}</td>
-					<td>${ingrediente.descripcion}</td>
+					<td>${alimento.id}</td>
+					<td>${alimento.nombre}</td>
+					<td>${alimento.descripcion}</td>
 					<td>
-						<a href="ingrediente/ver?id=${ingrediente.id}">Ver</a>
-						<a href="ingrediente/editar?id=${ingrediente.id}">Editar</a>
-						<a href="ingrediente/eliminar?id=${ingrediente.id}">Eliminar</a>
+						<a href="alimento/ver?id=${alimento.id}">Ver</a>
+						<a href="alimento/editar?id=${alimento.id}">Editar</a>
+						<a href="alimento/eliminar?id=${alimento.id}">Eliminar</a>
 					</td>
 				</tr>
 			</c:forEach>
