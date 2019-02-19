@@ -11,4 +11,6 @@ public interface IngredienteModelo {
 	boolean delete(int id);
 
 	boolean update(Ingrediente ingrediente);
+	
+	ArrayList<Ingrediente> ingredientes(int id_plato);
 }
