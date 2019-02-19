@@ -21,7 +21,6 @@ public class Ver extends HttpServlet {
      */
     public Ver() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

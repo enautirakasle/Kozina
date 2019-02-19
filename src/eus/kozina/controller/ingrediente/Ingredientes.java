@@ -27,8 +27,14 @@ public class Ingredientes extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		IngredienteModeloImp ingredienteModelo =new IngredienteModeloImp();
+		//TODO  hau hobeto beste lehio baten, ingredinte bat ezabatzean errorea dagoenean gertatzen da
+		String error = request.getParameter("error");
+		if(error != null) {
+			request.setAttribute("error", error);
+		}
 		
+		
+		IngredienteModeloImp ingredienteModelo =new IngredienteModeloImp();
 		request.setAttribute("ingredientes", ingredienteModelo.selectAll());
 		request.getRequestDispatcher("ingrediente/verTodos.jsp").forward(request, response);
 	}

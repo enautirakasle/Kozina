@@ -63,8 +63,16 @@ public class IngredienteModeloImp extends Conector implements IngredienteModelo 
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("delete from ingredientes where id=?");
+			pst.setInt(1, id);
+			pst.execute();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
