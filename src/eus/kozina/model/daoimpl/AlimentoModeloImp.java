@@ -82,25 +82,7 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 
 	@Override
 	public ArrayList<Alimento> ingredientes(int id_plato) {
-		ArrayList<Alimento> alimentos = new ArrayList<Alimento>();
-		
-		try {
-			PreparedStatement pst = this.conexion.prepareStatement("SELECT alimentos.* FROM ingredientes INNER JOIN alimentos on ingredientes.id_alimento= alimentos.id WHERE ingredientes.id_plato=?");
-			pst.setInt(1, id_plato);
-			
-			ResultSet rs = pst.executeQuery();
-			while (rs.next()) {
-				 Alimento alimento = new Alimento(rs.getString("nombre"));
-				 alimento.setId(rs.getInt("id"));
-				 alimento.setDescripcion(rs.getString("descripcion"));
-
-				 alimentos.add(alimento);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		}
-		return alimentos;
+		return null;
 	}
 
 }

@@ -31,8 +31,8 @@
 					<td colspan="4">
 						<b>Ingredientes</b>
 						<ul>
-						<c:forEach items="${plato.alimentos}" var="alimento">
-							<li><a href="alimento/ver?id=${alimento.id}">${alimento.nombre}</a></li>
+						<c:forEach items="${plato.ingredientes}" var="ingrediente">
+							<li><a href="alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a> - ${ingrediente.cantidad} gr</li>
 						</c:forEach>
 						</ul>
 					</td>
