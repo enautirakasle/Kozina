@@ -32,7 +32,7 @@
 						<b>Ingredientes</b>
 						<ul>
 						<c:forEach items="${plato.ingredientes}" var="ingrediente">
-							<li>${ingrediente.nombre}</li>
+							<li><a href="ingrediente/ver?id=${ingrediente.id}">${ingrediente.nombre}</a></li>
 						</c:forEach>
 						</ul>
 					</td>
