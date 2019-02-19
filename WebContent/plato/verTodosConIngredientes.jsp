@@ -23,40 +23,23 @@
 					<td>${plato.id}</td>
 					<td>${plato.nombre}</td>
 					<td>${plato.descripcion}</td>
-					<td></td>
 					<td><a href="plato/ver?id=${plato.id}">Ver</a> <a
 						href="plato/editar?id=${plato.id}">Editar</a> <a
 						href="plato/eliminar?id=${plato.id}">Eliminar</a></td>
 				</tr>
+				<tr>
+					<td colspan="4">
+						<b>Ingredientes</b>
+						<ul>
+						<c:forEach items="${plato.ingredientes}" var="ingrediente">
+							<li>${ingrediente.nombre}</li>
+						</c:forEach>
+						</ul>
+					</td>
+					
+				</tr>
 			</c:forEach>
 		</tbody>
-	</table>
-
-	<table  border="1">
-		<tr>
-			<td colspan="3">Hola esto es una linea</td>
-		</tr>
-		<tr>
-			<td>asd</td>
-			<td>asdf</td>
-			<td>asdf</td>
-		</tr>
-		<tr>
-			<td colspan="3">Hola esto es una linea</td>
-		</tr>
-		<tr>
-			<td>asd</td>
-			<td>asdf</td>
-			<td>asdf</td>
-		</tr>
-		<tr>
-			<td colspan="3">Hola esto es una linea</td>
-		</tr>
-		<tr>
-			<td>asd</td>
-			<td>asdf</td>
-			<td>asdf</td>
-		</tr>
 	</table>
 </body>
 </html>
