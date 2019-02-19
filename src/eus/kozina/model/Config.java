@@ -1,4 +1,4 @@
-package eus.kozina.modelo;
+package eus.kozina.model;
 /**
  * Inteface Config creada almacenar guardar parametros
  * de conexion con la BBDD

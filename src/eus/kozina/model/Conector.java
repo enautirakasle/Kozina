@@ -1,4 +1,4 @@
-package eus.kozina.modelo;
+package eus.kozina.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

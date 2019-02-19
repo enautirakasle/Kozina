@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import eus.kozina.model.Conector;
 import eus.kozina.model.bean.Plato;
 import eus.kozina.model.dao.PlatoModelo;
-import eus.kozina.modelo.Conector;
 
 public class PlatoModeloImp extends Conector implements PlatoModelo {
 

@@ -6,10 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
+import eus.kozina.model.Conector;
 import eus.kozina.model.bean.Ingrediente;
 import eus.kozina.model.dao.IngredienteModelo;
-import eus.kozina.modelo.Conector;
 
 public class IngredienteModeloImp extends Conector implements IngredienteModelo {
 
