@@ -51,6 +51,7 @@ public class PlatoModeloImp extends Conector implements PlatoModelo {
 				Plato plato = new Plato(rs.getString("nombre"));
 				plato.setId(rs.getInt("id"));
 				plato.setDescripcion(rs.getString("descripcion"));
+				plato.setElavoracion(rs.getString("elavoracion"));
 				return plato;
 			}
 		} catch (SQLException e) {

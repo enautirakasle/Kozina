@@ -21,9 +21,13 @@
 			<td>Descripción:</td>
 			<td>${plato.descripcion}</td>
 		</tr>
+		<tr>
+			<td colspan="2">${plato.elavoracion}</td>
+		</tr>
 	</table>
 	<a href="${pageContext.request.contextPath}/plato/editar?id=${plato.id}">Editar</a>
 	<a href="${pageContext.request.contextPath}/plato/eliminar?id=${plato.id}">Eliminar</a>
-	<a href="${pageContext.request.contextPath}/platos">Volver</a>
+	<a href="${pageContext.request.contextPath}/platos">Ver platos</a>
+	<a href="${pageContext.request.contextPath}/platosconingredientes">Todas las recetas</a>
 </body>
 </html>

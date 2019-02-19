@@ -14,21 +14,23 @@
 				<th>id</th>
 				<th>nombre</th>
 				<th>descripcion</th>
-				<th>accion</th>
+				<th>acciones</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${platos}" var="plato">
 				<tr>
 					<td>${plato.id}</td>
-					<td>${plato.nombre}</td>
+					<td><a href="plato/ver?id=${plato.id}">${plato.nombre}</a></td>
 					<td>${plato.descripcion}</td>
-					<td><a href="plato/ver?id=${plato.id}">Ver</a> <a
+					<td> <a
 						href="plato/editar?id=${plato.id}">Editar</a> <a
 						href="plato/eliminar?id=${plato.id}">Eliminar</a></td>
 				</tr>
 				<tr>
 					<td colspan="4">
+						<b>Elavoración</b>
+						<p>${plato.elavoracion}</p>
 						<b>Ingredientes</b>
 						<ul>
 						<c:forEach items="${plato.ingredientes}" var="ingrediente">

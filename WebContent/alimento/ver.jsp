@@ -24,6 +24,7 @@
 	</table>
 	<a href="${pageContext.request.contextPath}/alimento/editar?id=${alimento.id}">Editar</a>
 	<a href="${pageContext.request.contextPath}/alimento/eliminar?id=${alimento.id}">Eliminar</a>
-	<a href="${pageContext.request.contextPath}/alimentos">Volver</a>
+	<a href="${pageContext.request.contextPath}/alimentos">Ver alimentos</a>
+	<a href="${pageContext.request.contextPath}/platosconingredientes">Todas las recetas</a>
 </body>
 </html>
