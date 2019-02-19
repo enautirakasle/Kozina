@@ -1,11 +1,13 @@
 package eus.kozina.model.daoimpl;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 import eus.kozina.model.Conector;
+import eus.kozina.model.bean.Ingrediente;
 import eus.kozina.model.bean.Plato;
 import eus.kozina.model.dao.PlatoModelo;
 
@@ -40,7 +42,21 @@ public class PlatoModeloImp extends Conector implements PlatoModelo {
 
 	@Override
 	public Plato select(int id) {
-		// TODO Auto-generated method stub
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("select * from platos where id=?");
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				Plato plato = new Plato(rs.getString("nombre"));
+				plato.setId(rs.getInt("id"));
+				plato.setDescripcion(rs.getString("descripcion"));
+				return plato;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 		return null;
 	}
 
