@@ -8,6 +8,8 @@
 <title>Ingredientes - Eskatza</title>
 </head>
 <body>
+<!-- igrediente bat ezabatzen denean errore bat jaurtitzen da -->
+${error}
 	<table border="1">
 		<thead>
 			<tr>
