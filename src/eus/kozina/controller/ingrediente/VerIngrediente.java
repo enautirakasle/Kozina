@@ -10,30 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 import eus.kozina.model.daoimpl.IngredienteModeloImp;
 
 /**
- * Servlet implementation class eliminar
+ * Servlet implementation class ver
  */
-@WebServlet("/ingrediente/eliminar")
-public class Eliminar extends HttpServlet {
+@WebServlet("/ingrediente/ver")
+public class VerIngrediente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Eliminar() {
+    public VerIngrediente() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id= Integer.parseInt(request.getParameter("id"));
-		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
-		ingredienteModelo.delete(id);
-		
-		request.setAttribute("ingredientes", ingredienteModelo.selectAll());
-		
+		int id = Integer.parseInt(request.getParameter("id"));
+		request.setAttribute("ingrediente", new IngredienteModeloImp().select(id));
+		request.getRequestDispatcher("/ingrediente/ver.jsp").forward(request, response);
 	}
 
 	/**
