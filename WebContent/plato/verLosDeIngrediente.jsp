@@ -35,7 +35,7 @@
 						<b>Ingredientes</b>
 						<ul>
 						<c:forEach items="${plato.ingredientes}" var="ingrediente">
-							<li><a href="alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a> - ${ingrediente.cantidad} gr</li>
+							<li><a href="alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a> - ${ingrediente.cantidad} gr (<a href="platoscon?id_alimento=${ingrediente.alimento.id}">Ver platos con ${ingrediente.alimento.nombre}</a>)</li>
 						</c:forEach>
 						</ul>
 					</td>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import eus.kozina.model.bean.Alimento;
 import eus.kozina.model.bean.Plato;
 import eus.kozina.model.daoimpl.AlimentoModeloImp;
+import eus.kozina.model.daoimpl.IngredienteModeloImp;
 import eus.kozina.model.daoimpl.PlatoModeloImp;
 
 /**
@@ -34,8 +35,13 @@ public class PlatosCon extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id_alimento = Integer.parseInt(request.getParameter("id_alimento"));
 		
+		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
 		PlatoModeloImp platoModelo = new PlatoModeloImp();
+		
 		ArrayList<Plato> platos = platoModelo.selectPlatos(id_alimento);
+		for (Plato plato : platos) {
+			plato.setIngredientes(ingredienteModelo.ingredientes(plato.getId()));
+		}
 		
 		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
 		Alimento alimento = alimentoModelo.select(id_alimento);

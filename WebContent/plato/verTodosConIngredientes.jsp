@@ -8,6 +8,7 @@
 <title>Platos</title>
 </head>
 <body>
+	<h1>Todas las recetas</h1>
 	<table border="1">
 		<thead>
 			<tr>
