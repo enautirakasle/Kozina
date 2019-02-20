@@ -41,7 +41,7 @@ public class PlatoModeloImp extends Conector implements PlatoModelo {
 	}
 
 	@Override
-	public Plato select(int id) {
+	public Plato selectPlato(int id) {
 		try {
 			PreparedStatement pst = this.conexion.prepareStatement("select * from platos where id=?");
 			pst.setInt(1, id);
@@ -71,6 +71,30 @@ public class PlatoModeloImp extends Conector implements PlatoModelo {
 	public boolean update(Plato plato) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public ArrayList<Plato> selectPlatos(int id_ingrediente) {
+		ArrayList<Plato> platos = new ArrayList<Plato>();
+
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("select platos.* from ingredientes join platos on ingredientes.id_plato = platos.id where ingredientes.id_alimento = ?");
+			pst.setInt(1, id_ingrediente);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				 Plato plato = new Plato(rs.getString("nombre"));
+				 plato.setId(rs.getInt("id"));
+				 plato.setDescripcion(rs.getString("descripcion"));
+				 plato.setElavoracion(rs.getString("elavoracion"));
+				 
+				 platos.add(plato);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return platos;
 	}
 
 }
