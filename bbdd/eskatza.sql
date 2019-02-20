@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-02-2019 a las 10:46:41
+-- Tiempo de generación: 21-02-2019 a las 00:09:34
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.1.21
 
@@ -47,7 +47,11 @@ INSERT INTO `alimentos` (`id`, `nombre`, `variedad`, `descripcion`, `cal_100`, `
 (111, 'curri', NULL, NULL, NULL, NULL, NULL, NULL),
 (112, 'cebolla', NULL, NULL, NULL, NULL, NULL, NULL),
 (113, 'pimienta', NULL, NULL, NULL, NULL, NULL, NULL),
-(114, 'pollo', NULL, 'ko ko k o', NULL, NULL, NULL, NULL);
+(114, 'pollo', NULL, 'ko ko k o', NULL, NULL, NULL, NULL),
+(115, 'laurel', NULL, NULL, NULL, NULL, NULL, NULL),
+(116, 'semillasa de sesamo', NULL, NULL, NULL, NULL, NULL, NULL),
+(117, 'mango', NULL, NULL, NULL, NULL, NULL, NULL),
+(118, 'nata', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -70,7 +74,15 @@ INSERT INTO `ingredientes` (`id`, `id_plato`, `id_alimento`, `cantidad`) VALUES
 (1, 3, 112, 500),
 (2, 3, 111, 1),
 (3, 3, 113, 1),
-(4, 3, 114, 1000);
+(4, 3, 114, 1000),
+(5, 4, 112, 400),
+(6, 4, 111, 5),
+(7, 4, 115, 2),
+(8, 4, 117, 100),
+(9, 4, 113, 3),
+(10, 4, 114, 500),
+(11, 4, 116, 2),
+(12, 3, 118, 75);
 
 -- --------------------------------------------------------
 
@@ -90,7 +102,8 @@ CREATE TABLE `platos` (
 --
 
 INSERT INTO `platos` (`id`, `nombre`, `descripcion`, `elavoracion`) VALUES
-(3, 'pollo al curri', NULL, '\r\n    El primer paso es sofreír en una sartén la cebolla y el ajo bien picados.\r\n    Cuando coja color añade el curry, la guindilla y una pizca del resto de especias, con las que conseguiréis aromatizar el pollo al curry. Remueve y deja que se cocine.\r\n    Añade el pollo troceado y bien salpimentado, mezcla y deja que se dore.\r\n    Después, introduce la nata y deja cocinar a fuego lento unos 10 minutos. Ya está listo este pollo al curry con nata.\r\n');
+(3, 'pollo al curri con nata', NULL, '\r\n    El primer paso es sofreír en una sartén la cebolla y el ajo bien picados.\r\n    Cuando coja color añade el curry, la guindilla y una pizca del resto de especias, con las que conseguiréis aromatizar el pollo al curry. Remueve y deja que se cocine.\r\n    Añade el pollo troceado y bien salpimentado, mezcla y deja que se dore.\r\n    Después, introduce la nata y deja cocinar a fuego lento unos 10 minutos. Ya está listo este pollo al curry con nata.\r\n'),
+(4, 'pollo en salsa de curry y mango', NULL, 'Hervimos la pechuga de pollo en abundante agua salada, con las hojas de laurel y unos granos de pimienta negra, durante unos 20 minutos. Para ahorrar energía, podemos llevar el agua a ebullición, apagar el fuego y dejar que el pollo se cueza lentamente a la vez que se enfría, dentro de la cacerola tapada.\r\n\r\nUna vez frío, retiramos el pollo del líquido de la cocción (del que reservamos un vaso). Escurrimos, deshebramos usando las manos o dos tenedores, colocamos en un cuenco y añadimos la salsa de mango y curry. Nosotros hemos usado salsa de una conocida marca americana, pero podéis hacerla casera con la receta que más os guste.\r\n\r\nSi la mezcla queda muy espesa, añadimos un poco del líquido de la cocción del pollo. Cortamos el pan de pita por la mitad sin llegar al final, dejando una especie de bolsillo en el que introducir el relleno. Tostamos el pan y lo rellenamos con una cama de espinacas frescas, el pollo en salsa y cebolla morada cortada en juliana. Espolvoreamos con sésamo negro y servimos.');
 
 --
 -- Índices para tablas volcadas
@@ -125,19 +138,19 @@ ALTER TABLE `platos`
 -- AUTO_INCREMENT de la tabla `alimentos`
 --
 ALTER TABLE `alimentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT de la tabla `ingredientes`
 --
 ALTER TABLE `ingredientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `platos`
 --
 ALTER TABLE `platos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
