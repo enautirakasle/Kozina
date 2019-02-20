@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h1>Todas las recetas</h1>
+	<c:forEach items="${platos}" var="plato">
 	<table border="1">
 		<thead>
 			<tr>
@@ -19,7 +20,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${platos}" var="plato">
+			
 				<tr>
 					<td>${plato.id}</td>
 					<td><a href="plato/ver?id=${plato.id}">${plato.nombre}</a></td>
@@ -41,8 +42,9 @@
 					</td>
 					
 				</tr>
-			</c:forEach>
+			
 		</tbody>
 	</table>
+	</c:forEach>
 </body>
 </html>

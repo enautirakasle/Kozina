@@ -8,7 +8,8 @@
 <title>Ver - Plato</title>
 </head>
 <body>
-	<table>
+<h1>Plato: ${plato.nombre}</h1>
+	<table border="1">
 		<tr>
 			<td>id:</td>
 			<td>${plato.id}</td>
