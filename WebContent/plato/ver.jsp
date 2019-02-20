@@ -28,6 +28,6 @@
 	<a href="${pageContext.request.contextPath}/plato/editar?id=${plato.id}">Editar</a>
 	<a href="${pageContext.request.contextPath}/plato/eliminar?id=${plato.id}">Eliminar</a>
 	<a href="${pageContext.request.contextPath}/platos">Ver platos</a>
-	<a href="${pageContext.request.contextPath}/platosconingredientes">Todas las recetas</a>
+	<a href="${pageContext.request.contextPath}/recetas">Todas las recetas</a>
 </body>
 </html>

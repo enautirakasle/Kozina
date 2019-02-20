@@ -15,16 +15,16 @@ import eus.kozina.model.daoimpl.IngredienteModeloImp;
 import eus.kozina.model.daoimpl.PlatoModeloImp;
 
 /**
- * Servlet implementation class PlatosConIngredientes
+ * Servlet implementation class Recetas
  */
-@WebServlet("/platosconingredientes")
-public class PlatosConIngredientes extends HttpServlet {
+@WebServlet("/recetas")
+public class Recetas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PlatosConIngredientes() {
+    public Recetas() {
         super();
         // TODO Auto-generated constructor stub
     }
