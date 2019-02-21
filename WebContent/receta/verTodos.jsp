@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Platos - Eskatza</title>
+<title>Recetas - Eskatza</title>
 </head>
 <body>
 	<table border="1">
@@ -18,15 +18,15 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${platos}" var="plato">
+			<c:forEach items="${recetas}" var="receta">
 				<tr>
-					<td>${plato.id}</td>
-					<td>${plato.nombre}</td>
-					<td>${plato.descripcion}</td>
+					<td>${receta.id}</td>
+					<td>${receta.nombre}</td>
+					<td>${receta.descripcion}</td>
 					<td>
-						<a href="plato/ver?id=${plato.id}">Ver</a>
-						<a href="plato/editar?id=${plato.id}">Editar</a>
-						<a href="plato/eliminar?id=${plato.id}">Eliminar</a>
+						<a href="receta/ver?id=${receta.id}">Ver</a>
+						<a href="receta/editar?id=${receta.id}">Editar</a>
+						<a href="receta/eliminar?id=${receta.id}">Eliminar</a>
 					</td>
 				</tr>
 			</c:forEach>

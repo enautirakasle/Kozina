@@ -12,5 +12,5 @@ public interface AlimentoModelo {
 
 	boolean update(Alimento alimento);
 	
-	ArrayList<Alimento> ingredientes(int id_plato);
+	ArrayList<Alimento> ingredientes(int id_receta);
 }

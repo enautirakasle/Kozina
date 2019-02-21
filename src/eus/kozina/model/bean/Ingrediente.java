@@ -3,17 +3,17 @@ package eus.kozina.model.bean;
 public class Ingrediente {
 	private int cantidad;
 	private Alimento alimento;
-	private Plato plato;
+	private Receta receta;
 
 	public Ingrediente() {
 
 	}
 
-	public Ingrediente(int cantidad, Alimento alimento, Plato plato) {
+	public Ingrediente(int cantidad, Alimento alimento, Receta receta) {
 		super();
 		this.cantidad = cantidad;
 		this.alimento = alimento;
-		this.plato = plato;
+		this.receta = receta;
 	}
 
 	public int getCantidad() {
@@ -32,12 +32,12 @@ public class Ingrediente {
 		this.alimento = alimento;
 	}
 
-	public Plato getPlato() {
-		return plato;
+	public Receta getReceta() {
+		return receta;
 	}
 
-	public void setPlato(Plato plato) {
-		this.plato = plato;
+	public void setReceta(Receta receta) {
+		this.receta = receta;
 	}
 
 }

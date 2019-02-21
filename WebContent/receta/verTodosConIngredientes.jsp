@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Platos</title>
+<title>Recetas</title>
 </head>
 <body>
 	<h1>Todas las recetas</h1>
-	<c:forEach items="${platos}" var="plato">
+	<c:forEach items="${recetas}" var="receta">
 	<table border="1">
 		<thead>
 			<tr>
@@ -22,21 +22,21 @@
 		<tbody>
 			
 				<tr>
-					<td>${plato.id}</td>
-					<td><a href="plato/ver?id=${plato.id}">${plato.nombre}</a></td>
-					<td>${plato.descripcion}</td>
+					<td>${receta.id}</td>
+					<td><a href="receta/ver?id=${receta.id}">${receta.nombre}</a></td>
+					<td>${receta.descripcion}</td>
 					<td> <a
-						href="plato/editar?id=${plato.id}">Editar</a> <a
-						href="plato/eliminar?id=${plato.id}">Eliminar</a></td>
+						href="receta/editar?id=${receta.id}">Editar</a> <a
+						href="receta/eliminar?id=${receta.id}">Eliminar</a></td>
 				</tr>
 				<tr>
 					<td colspan="4">
 						<b>Elavoración</b>
-						<p>${plato.elavoracion}</p>
+						<p>${receta.elavoracion}</p>
 						<b>Ingredientes</b>
 						<ul>
-						<c:forEach items="${plato.ingredientes}" var="ingrediente">
-							<li><a href="alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a> - ${ingrediente.cantidad} gr (<a href="platoscon?id_alimento=${ingrediente.alimento.id}">Ver platos con ${ingrediente.alimento.nombre}</a>)</li>
+						<c:forEach items="${receta.ingredientes}" var="ingrediente">
+							<li><a href="alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a> - ${ingrediente.cantidad} gr (<a href="recetascon?id_alimento=${ingrediente.alimento.id}">Ver recetas con ${ingrediente.alimento.nombre}</a>)</li>
 						</c:forEach>
 						</ul>
 					</td>

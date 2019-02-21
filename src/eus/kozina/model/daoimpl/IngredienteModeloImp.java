@@ -13,13 +13,13 @@ import eus.kozina.model.dao.IngredienteModelo;
 public class IngredienteModeloImp extends Conector implements IngredienteModelo {
 
 	@Override
-	public ArrayList<Ingrediente> ingredientes(int id_plato) {
+	public ArrayList<Ingrediente> ingredientes(int id_receta) {
 		ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
 
 		try {
 			PreparedStatement pst = this.conexion.prepareStatement(
-					"SELECT alimentos.*, ingredientes.cantidad as cantidad FROM ingredientes INNER JOIN alimentos on ingredientes.id_alimento= alimentos.id WHERE ingredientes.id_plato=?");
-			pst.setInt(1, id_plato);
+					"SELECT alimentos.*, ingredientes.cantidad as cantidad FROM ingredientes INNER JOIN alimentos on ingredientes.id_alimento= alimentos.id WHERE ingredientes.id_receta=?");
+			pst.setInt(1, id_receta);
 
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {

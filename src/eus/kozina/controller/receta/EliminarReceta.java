@@ -1,4 +1,4 @@
-package eus.kozina.controller.plato;
+package eus.kozina.controller.receta;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,20 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.daoimpl.AlimentoModeloImp;
-import eus.kozina.model.daoimpl.PlatoModeloImp;
-
 /**
- * Servlet implementation class VerPlato
+ * Servlet implementation class EliminarReceta
  */
-@WebServlet("/plato/ver")
-public class VerPlato extends HttpServlet {
+@WebServlet("/receta/eliminar")
+public class EliminarReceta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public VerPlato() {
+    public EliminarReceta() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,9 +26,8 @@ public class VerPlato extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("plato", new PlatoModeloImp().selectPlato(id));
-		request.getRequestDispatcher("/plato/ver.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

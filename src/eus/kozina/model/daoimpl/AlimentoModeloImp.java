@@ -81,7 +81,7 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 	}
 
 	@Override
-	public ArrayList<Alimento> ingredientes(int id_plato) {
+	public ArrayList<Alimento> ingredientes(int id_receta) {
 		return null;
 	}
 

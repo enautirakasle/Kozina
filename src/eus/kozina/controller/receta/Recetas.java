@@ -1,4 +1,4 @@
-package eus.kozina.controller.plato;
+package eus.kozina.controller.receta;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.daoimpl.PlatoModeloImp;
+import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
- * Servlet implementation class Platos
+ * Servlet implementation class Recetas
  */
-@WebServlet("/platos")
-public class Platos extends HttpServlet {
+@WebServlet("/recetas")
+public class Recetas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Platos() {
+    public Recetas() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,10 +28,10 @@ public class Platos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PlatoModeloImp platoModelo = new PlatoModeloImp();
+		RecetaModeloImp recetaModelo = new RecetaModeloImp();
 		
-		request.setAttribute("platos", platoModelo.selectAll());
-		request.getRequestDispatcher("plato/verTodos.jsp").forward(request, response);
+		request.setAttribute("recetas", recetaModelo.selectAll());
+		request.getRequestDispatcher("receta/verTodos.jsp").forward(request, response);
 
 	}
 

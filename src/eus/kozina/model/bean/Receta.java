@@ -2,7 +2,7 @@ package eus.kozina.model.bean;
 
 import java.util.ArrayList;
 
-public class Plato {
+public class Receta {
 
 	private int id;
 	private String nombre;
@@ -11,7 +11,7 @@ public class Plato {
 	
 	private ArrayList<Ingrediente> ingredientes;
 	
-	public Plato(String nombre) {
+	public Receta(String nombre) {
 		this.nombre = nombre;
 	}
 

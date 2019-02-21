@@ -1,4 +1,4 @@
-package eus.kozina.controller.plato;
+package eus.kozina.controller.receta;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,22 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import eus.kozina.model.bean.Alimento;
-import eus.kozina.model.bean.Plato;
+import eus.kozina.model.bean.Receta;
 import eus.kozina.model.daoimpl.AlimentoModeloImp;
 import eus.kozina.model.daoimpl.IngredienteModeloImp;
-import eus.kozina.model.daoimpl.PlatoModeloImp;
+import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
- * Servlet implementation class PlatosCon
+ * Servlet implementation class RecetasCon
  */
-@WebServlet("/platoscon")
-public class PlatosCon extends HttpServlet {
+@WebServlet("/recetascon")
+public class RecetasCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PlatosCon() {
+    public RecetasCon() {
         super();
     }
 
@@ -36,19 +36,19 @@ public class PlatosCon extends HttpServlet {
 		int id_alimento = Integer.parseInt(request.getParameter("id_alimento"));
 		
 		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
-		PlatoModeloImp platoModelo = new PlatoModeloImp();
+		RecetaModeloImp recetaModelo = new RecetaModeloImp();
 		
-		ArrayList<Plato> platos = platoModelo.selectPlatos(id_alimento);
-		for (Plato plato : platos) {
-			plato.setIngredientes(ingredienteModelo.ingredientes(plato.getId()));
+		ArrayList<Receta> recetas = recetaModelo.selectRecetas(id_alimento);
+		for (Receta receta : recetas) {
+			receta.setIngredientes(ingredienteModelo.ingredientes(receta.getId()));
 		}
 		
 		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
 		Alimento alimento = alimentoModelo.select(id_alimento);
 		
-		request.setAttribute("platos", platos);
+		request.setAttribute("recetas", recetas);
 		request.setAttribute("alimento", alimento);
-		request.getRequestDispatcher("plato/verLosDeIngrediente.jsp").forward(request, response);
+		request.getRequestDispatcher("receta/verLosDeIngrediente.jsp").forward(request, response);
 		
 	}
 

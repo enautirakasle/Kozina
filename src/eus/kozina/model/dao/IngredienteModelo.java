@@ -5,5 +5,5 @@ import eus.kozina.model.bean.Ingrediente;
 
 public interface IngredienteModelo {
 
-	ArrayList<Ingrediente> ingredientes(int id_plato);
+	ArrayList<Ingrediente> ingredientes(int id_receta);
 }

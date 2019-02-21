@@ -1,4 +1,4 @@
-package eus.kozina.controller.plato;
+package eus.kozina.controller.receta;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,22 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.bean.Plato;
+import eus.kozina.model.bean.Receta;
 import eus.kozina.model.daoimpl.AlimentoModeloImp;
 import eus.kozina.model.daoimpl.IngredienteModeloImp;
-import eus.kozina.model.daoimpl.PlatoModeloImp;
+import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
  * Servlet implementation class Recetas
  */
-@WebServlet("/recetas")
-public class Recetas extends HttpServlet {
+@WebServlet("/recetasconingredientes")
+public class RecetasConIngredientes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Recetas() {
+    public RecetasConIngredientes() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,15 +36,15 @@ public class Recetas extends HttpServlet {
 
 		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
 		
-		PlatoModeloImp platoModelo = new PlatoModeloImp();
+		RecetaModeloImp recetaModelo = new RecetaModeloImp();
 		
-		ArrayList<Plato> platos = platoModelo.selectAll();
-		for (Plato plato : platos) {
-			plato.setIngredientes(ingredienteModelo.ingredientes(plato.getId()));
+		ArrayList<Receta> recetas = recetaModelo.selectAll();
+		for (Receta receta : recetas) {
+			receta.setIngredientes(ingredienteModelo.ingredientes(receta.getId()));
 		}
 		
-		request.setAttribute("platos", platos);
-		request.getRequestDispatcher("plato/verTodosConIngredientes.jsp").forward(request, response);
+		request.setAttribute("recetas", recetas);
+		request.getRequestDispatcher("receta/verTodosConIngredientes.jsp").forward(request, response);
 		
 		
 	}

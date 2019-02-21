@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-02-2019 a las 00:09:34
+-- Tiempo de generación: 21-02-2019 a las 23:09:03
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.1.21
 
@@ -33,7 +33,6 @@ CREATE TABLE `alimentos` (
   `nombre` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `variedad` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `descripcion` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cal_100` int(11) DEFAULT NULL,
   `proteinas_100` int(11) DEFAULT NULL,
   `grasas_100` int(11) DEFAULT NULL,
   `carbohidratos_100` int(11) DEFAULT NULL
@@ -43,15 +42,15 @@ CREATE TABLE `alimentos` (
 -- Volcado de datos para la tabla `alimentos`
 --
 
-INSERT INTO `alimentos` (`id`, `nombre`, `variedad`, `descripcion`, `cal_100`, `proteinas_100`, `grasas_100`, `carbohidratos_100`) VALUES
-(111, 'curri', NULL, NULL, NULL, NULL, NULL, NULL),
-(112, 'cebolla', NULL, NULL, NULL, NULL, NULL, NULL),
-(113, 'pimienta', NULL, NULL, NULL, NULL, NULL, NULL),
-(114, 'pollo', NULL, 'ko ko k o', NULL, NULL, NULL, NULL),
-(115, 'laurel', NULL, NULL, NULL, NULL, NULL, NULL),
-(116, 'semillasa de sesamo', NULL, NULL, NULL, NULL, NULL, NULL),
-(117, 'mango', NULL, NULL, NULL, NULL, NULL, NULL),
-(118, 'nata', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `alimentos` (`id`, `nombre`, `variedad`, `descripcion`, `proteinas_100`, `grasas_100`, `carbohidratos_100`) VALUES
+(111, 'curri', NULL, NULL, NULL, NULL, NULL),
+(112, 'cebolla', NULL, NULL, NULL, NULL, NULL),
+(113, 'pimienta', NULL, NULL, NULL, NULL, NULL),
+(114, 'pollo', NULL, 'ko ko k o', NULL, NULL, NULL),
+(115, 'laurel', NULL, NULL, NULL, NULL, NULL),
+(116, 'semillasa de sesamo', NULL, NULL, NULL, NULL, NULL),
+(117, 'mango', NULL, NULL, NULL, NULL, NULL),
+(118, 'nata', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -61,7 +60,7 @@ INSERT INTO `alimentos` (`id`, `nombre`, `variedad`, `descripcion`, `cal_100`, `
 
 CREATE TABLE `ingredientes` (
   `id` int(11) NOT NULL,
-  `id_plato` int(11) NOT NULL,
+  `id_receta` int(11) NOT NULL,
   `id_alimento` int(11) NOT NULL,
   `cantidad` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -70,7 +69,7 @@ CREATE TABLE `ingredientes` (
 -- Volcado de datos para la tabla `ingredientes`
 --
 
-INSERT INTO `ingredientes` (`id`, `id_plato`, `id_alimento`, `cantidad`) VALUES
+INSERT INTO `ingredientes` (`id`, `id_receta`, `id_alimento`, `cantidad`) VALUES
 (1, 3, 112, 500),
 (2, 3, 111, 1),
 (3, 3, 113, 1),
@@ -87,10 +86,10 @@ INSERT INTO `ingredientes` (`id`, `id_plato`, `id_alimento`, `cantidad`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `platos`
+-- Estructura de tabla para la tabla `recetas`
 --
 
-CREATE TABLE `platos` (
+CREATE TABLE `recetas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `descripcion` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -98,10 +97,10 @@ CREATE TABLE `platos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `platos`
+-- Volcado de datos para la tabla `recetas`
 --
 
-INSERT INTO `platos` (`id`, `nombre`, `descripcion`, `elavoracion`) VALUES
+INSERT INTO `recetas` (`id`, `nombre`, `descripcion`, `elavoracion`) VALUES
 (3, 'pollo al curri con nata', NULL, '\r\n    El primer paso es sofreír en una sartén la cebolla y el ajo bien picados.\r\n    Cuando coja color añade el curry, la guindilla y una pizca del resto de especias, con las que conseguiréis aromatizar el pollo al curry. Remueve y deja que se cocine.\r\n    Añade el pollo troceado y bien salpimentado, mezcla y deja que se dore.\r\n    Después, introduce la nata y deja cocinar a fuego lento unos 10 minutos. Ya está listo este pollo al curry con nata.\r\n'),
 (4, 'pollo en salsa de curry y mango', NULL, 'Hervimos la pechuga de pollo en abundante agua salada, con las hojas de laurel y unos granos de pimienta negra, durante unos 20 minutos. Para ahorrar energía, podemos llevar el agua a ebullición, apagar el fuego y dejar que el pollo se cueza lentamente a la vez que se enfría, dentro de la cacerola tapada.\r\n\r\nUna vez frío, retiramos el pollo del líquido de la cocción (del que reservamos un vaso). Escurrimos, deshebramos usando las manos o dos tenedores, colocamos en un cuenco y añadimos la salsa de mango y curry. Nosotros hemos usado salsa de una conocida marca americana, pero podéis hacerla casera con la receta que más os guste.\r\n\r\nSi la mezcla queda muy espesa, añadimos un poco del líquido de la cocción del pollo. Cortamos el pan de pita por la mitad sin llegar al final, dejando una especie de bolsillo en el que introducir el relleno. Tostamos el pan y lo rellenamos con una cama de espinacas frescas, el pollo en salsa y cebolla morada cortada en juliana. Espolvoreamos con sésamo negro y servimos.');
 
@@ -120,13 +119,13 @@ ALTER TABLE `alimentos`
 --
 ALTER TABLE `ingredientes`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_plato` (`id_plato`,`id_alimento`),
+  ADD UNIQUE KEY `id_plato` (`id_receta`,`id_alimento`),
   ADD KEY `id_ingrediente` (`id_alimento`);
 
 --
--- Indices de la tabla `platos`
+-- Indices de la tabla `recetas`
 --
-ALTER TABLE `platos`
+ALTER TABLE `recetas`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nombre` (`nombre`);
 
@@ -147,9 +146,9 @@ ALTER TABLE `ingredientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT de la tabla `platos`
+-- AUTO_INCREMENT de la tabla `recetas`
 --
-ALTER TABLE `platos`
+ALTER TABLE `recetas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -161,7 +160,7 @@ ALTER TABLE `platos`
 --
 ALTER TABLE `ingredientes`
   ADD CONSTRAINT `ingredientes_ibfk_1` FOREIGN KEY (`id_alimento`) REFERENCES `alimentos` (`id`),
-  ADD CONSTRAINT `ingredientes_ibfk_2` FOREIGN KEY (`id_plato`) REFERENCES `platos` (`id`);
+  ADD CONSTRAINT `ingredientes_ibfk_2` FOREIGN KEY (`id_receta`) REFERENCES `recetas` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

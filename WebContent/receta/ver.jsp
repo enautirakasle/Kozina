@@ -5,26 +5,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ver - Alimento</title>
+<title>Ver - Receta</title>
 </head>
 <body>
-	<table>
+<h1>Receta: ${receta.nombre}</h1>
+	<table border="1">
 		<tr>
 			<td>id:</td>
-			<td>${alimento.id}</td>
+			<td>${receta.id}</td>
 		</tr>
 		<tr>
 			<td>Nombre:</td>
-			<td>${alimento.nombre}</td>
+			<td>${receta.nombre}</td>
 		</tr>
 		<tr>
 			<td>Descripción:</td>
-			<td>${alimento.descripcion}</td>
+			<td>${receta.descripcion}</td>
+		</tr>
+		<tr>
+			<td colspan="2">${receta.elavoracion}</td>
 		</tr>
 	</table>
-	<a href="${pageContext.request.contextPath}/alimento/editar?id=${alimento.id}">Editar</a>
-	<a href="${pageContext.request.contextPath}/alimento/eliminar?id=${alimento.id}">Eliminar</a>
-	<a href="${pageContext.request.contextPath}/alimentos">Ver alimentos</a>
+	<a href="${pageContext.request.contextPath}/receta/editar?id=${receta.id}">Editar</a>
+	<a href="${pageContext.request.contextPath}/receta/eliminar?id=${receta.id}">Eliminar</a>
+	<a href="${pageContext.request.contextPath}/recetas">Ver recetas</a>
 	<a href="${pageContext.request.contextPath}/recetasconingredientes">Todas las recetas</a>
 </body>
 </html>

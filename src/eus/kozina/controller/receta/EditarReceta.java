@@ -1,4 +1,4 @@
-package eus.kozina.controller.plato;
+package eus.kozina.controller.receta;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,18 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class EditarPlato
+ * Servlet implementation class EditarReceta
  */
-@WebServlet("/plato/editar")
-public class EditarPlato extends HttpServlet {
+@WebServlet("/receta/editar")
+public class EditarReceta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditarPlato() {
+    public EditarReceta() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
