@@ -7,20 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.bean.Alimento;
-import eus.kozina.model.daoimpl.AlimentoModeloImp;
-
 /**
- * Servlet implementation class editar
+ * Servlet implementation class CrearAlimento
  */
-@WebServlet("/alimento/editar")
-public class EditarAlimento extends HttpServlet {
+@WebServlet("/alimento/crear")
+public class CrearAlimento extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditarAlimento() {
+    public CrearAlimento() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,13 +26,7 @@ public class EditarAlimento extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id_alimento = Integer.parseInt(request.getParameter("id"));
-		
-		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
-		Alimento alimento = alimentoModelo.select(id_alimento);
-		
-		request.setAttribute("alimento", alimento);
-		request.getRequestDispatcher("/alimento/formEdicion.jsp").forward(request, response);
+		request.getRequestDispatcher("alimento/formNuevo.jsp").forward(request, response);
 	}
 
 	/**
