@@ -8,7 +8,7 @@
 <title>Editar alimento</title>
 </head>
 <body>
-	<form action="alimento/cambiar" method="POST">
+	<form action="${pageContext.request.contextPath}/alimento/cambiar" method="POST">
 		<input type="hidden" name="id" value="${alimento.id}"/>
 		
 		<label for="nombre">Nombre</label>

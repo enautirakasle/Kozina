@@ -75,9 +75,20 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 	}
 
 	@Override
-	public boolean update(Alimento alimento) {
-		// TODO Auto-generated method stub
-		return false;
+	public int update(Alimento alimento) {
+		PreparedStatement pst;
+		try {
+			pst = this.conexion.prepareStatement("UPDATE alimentos SET nombre = ?, descripcion = ? WHERE id = ?");
+			pst.setString(1, alimento.getNombre());
+			pst.setString(2, alimento.getDescripcion());
+			pst.setInt(3, alimento.getId());
+			
+			return pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		}
+		
 	}
 
 	@Override

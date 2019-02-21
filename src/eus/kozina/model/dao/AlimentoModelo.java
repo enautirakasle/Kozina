@@ -10,7 +10,7 @@ public interface AlimentoModelo {
 
 	boolean delete(int id);
 
-	boolean update(Alimento alimento);
+	int update(Alimento alimento);
 	
 	ArrayList<Alimento> ingredientes(int id_receta);
 	
