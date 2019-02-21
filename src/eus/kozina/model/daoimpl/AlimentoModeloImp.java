@@ -85,4 +85,18 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 		return null;
 	}
 
+	@Override
+	public void insert(Alimento alimento) {
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("insert into alimentos (nombre, descripcion) values (?, ?)");
+			pst.setString(1, alimento.getNombre());
+			pst.setString(2, alimento.getDescripcion());
+			pst.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 }

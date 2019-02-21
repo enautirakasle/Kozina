@@ -8,7 +8,7 @@
 <title>Guardar alimento</title>
 </head>
 <body>
-	<form action="alimento/guardar" method="POST">
+	<form action="${pageContext.request.contextPath}/alimento/guardar" method="POST">
 		
 		<label for="nombre">Nombre</label>
   		<input type="text" name="nombre" id="nombre" value=""/><br>
