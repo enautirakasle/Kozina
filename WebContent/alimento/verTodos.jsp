@@ -8,6 +8,9 @@
 <title>Alimentos - Eskatza</title>
 </head>
 <body>
+<header>
+	<nav><a href="${pageContext.request.contextPath}/alimento/crear">+ Alimento</a></nav>
+</header>
 <!-- igrediente bat ezabatzen denean errore bat jaurtitzen da -->
 ${error}
 	<table border="1">

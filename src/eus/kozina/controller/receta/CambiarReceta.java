@@ -7,33 +7,48 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import eus.kozina.model.bean.Receta;
+import eus.kozina.model.daoimpl.RecetaModeloImp;
+
 /**
- * Servlet implementation class EditarReceta
+ * Servlet implementation class CambiarReceta
  */
-@WebServlet("/receta/editar")
-public class EditarReceta extends HttpServlet {
+@WebServlet("/receta/cambiar")
+public class CambiarReceta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditarReceta() {
+    public CambiarReceta() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/receta/formEdicion.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		int id = Integer.parseInt(request.getParameter("id"));
+		String nombre = request.getParameter("nombre");
+		String descripcion = request.getParameter("descripcion");
+		String elavoracion = request.getParameter("elavoracion");
+		
+		Receta receta = new Receta(nombre);
+		receta.setId(id);
+		receta.setDescripcion(descripcion);
+		receta.setElavoracion(elavoracion);
+		
+		RecetaModeloImp recetaModelo = new RecetaModeloImp();
+		recetaModelo.update(receta);
 	}
 
 }

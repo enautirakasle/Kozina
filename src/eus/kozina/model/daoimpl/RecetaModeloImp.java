@@ -68,9 +68,21 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 	}
 
 	@Override
-	public boolean update(Receta receta) {
-		// TODO Auto-generated method stub
-		return false;
+	public int update(Receta receta) {
+		//UPDATE `recetas` SET `id`=[value-1],`nombre`=[value-2],`descripcion`=[value-3],`elavoracion`=[value-4] WHERE 1
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("UPDATE recetas SET nombre=?,descripcion=?,elavoracion=? WHERE id = ?");
+			pst.setString(1, receta.getNombre());
+			pst.setString(2, receta.getDescripcion());
+			pst.setString(3, receta.getElavoracion());
+			pst.setInt(4, receta.getId());
+			
+			return pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		}
 	}
 
 	@Override
@@ -96,5 +108,19 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 		}
 		return recetas;
 	}
+
+	@Override
+	public void insert(Receta receta) {
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("insert into recetas (nombre, descripcion, elavoracion) values (?, ?, ?)");
+			pst.setString(1, receta.getNombre());
+			pst.setString(2, receta.getDescripcion());
+			pst.setString(3, receta.getElavoracion());
+			pst.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 }

@@ -13,5 +13,7 @@ public interface RecetaModelo {
 	
 	boolean delete(int id);
 
-	boolean update(Receta receta);
+	int update(Receta receta);
+	
+	void insert(Receta receta);
 }
