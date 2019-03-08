@@ -6,9 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ver - Alimento</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css"/>
 </head>
 <body>
-	<img src="${pageContext.request.contextPath}/imagen/alimento?id=${alimento.id}"/>
+	<img id="foto-alimento" src="${pageContext.request.contextPath}/imagen/alimento?id=${alimento.id}"/>
 	<table>
 		<tr>
 			<td>id:</td>
