@@ -1,10 +1,13 @@
 package eus.kozina.model.bean;
 
+import java.io.InputStream;
+
 public class Alimento{
 
 	private int id;
 	private String nombre;
 	private String descripcion;
+	private InputStream imagenBlob;
 	
 	public Alimento(String nombre) {
 		super();
@@ -33,6 +36,14 @@ public class Alimento{
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public InputStream getImagenBlob() {
+		return imagenBlob;
+	}
+
+	public void setImagenBlob(InputStream imagenBlob) {
+		this.imagenBlob = imagenBlob;
 	}
 	
 	

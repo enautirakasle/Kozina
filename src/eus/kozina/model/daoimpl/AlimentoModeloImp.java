@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.websocket.Decoder.BinaryStream;
+
 import eus.kozina.model.Conector;
 import eus.kozina.model.bean.Alimento;
 import eus.kozina.model.dao.AlimentoModelo;
@@ -51,6 +53,7 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 				Alimento alimento = new Alimento(rs.getString("nombre"));
 				alimento.setId(rs.getInt("id"));
 				alimento.setDescripcion(rs.getString("descripcion"));
+				alimento.setImagenBlob(rs.getBinaryStream("foto"));
 				return alimento;
 			}
 		} catch (SQLException e) {

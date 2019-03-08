@@ -8,6 +8,7 @@
 <title>Ver - Alimento</title>
 </head>
 <body>
+	<img src="${pageContext.request.contextPath}/imagen/alimento?id=${alimento.id}"/>
 	<table>
 		<tr>
 			<td>id:</td>
