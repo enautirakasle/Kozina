@@ -1,12 +1,15 @@
 package eus.kozina.controller.alimento;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import eus.kozina.model.bean.Alimento;
 import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
@@ -32,7 +35,14 @@ public class EliminarAlimento extends HttpServlet {
 		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
 		alimentoModelo.delete(id);
 		
-		request.setAttribute("alimentos", alimentoModelo.selectAll());
+		response.sendRedirect(request.getContextPath()+"/alimentos");
+//		ArrayList<Alimento> alimentos = alimentoModelo.selectAll();
+//		
+//		request.setAttribute("alimentos", alimentos);
+//		
+//		request.getRequestDispatcher("verTodos.jsp").forward(request, response);
+		
+		
 		
 	}
 
