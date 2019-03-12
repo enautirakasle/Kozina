@@ -30,6 +30,8 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 				 Alimento alimento = new Alimento(rs.getString("nombre"));
 				 alimento.setId(rs.getInt("id"));
 				 alimento.setDescripcion(rs.getString("descripcion"));
+				 alimento.setImagenBlob(rs.getBinaryStream("foto"));
+				 alimento.setImagenBase64(rs.getString("fotob64"));
 
 				 alimentos.add(alimento);
 			}
@@ -54,6 +56,8 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 				alimento.setId(rs.getInt("id"));
 				alimento.setDescripcion(rs.getString("descripcion"));
 				alimento.setImagenBlob(rs.getBinaryStream("foto"));
+				alimento.setImagenBase64(rs.getString("fotob64"));
+				
 				return alimento;
 			}
 		} catch (SQLException e) {
