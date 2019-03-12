@@ -8,6 +8,7 @@ public class Alimento{
 	private String nombre;
 	private String descripcion;
 	private InputStream imagenBlob;
+	private String imagenBase64;
 	
 	public Alimento(String nombre) {
 		super();
@@ -44,6 +45,14 @@ public class Alimento{
 
 	public void setImagenBlob(InputStream imagenBlob) {
 		this.imagenBlob = imagenBlob;
+	}
+
+	public String getImagenBase64() {
+		return imagenBase64;
+	}
+
+	public void setImagenBase64(String imagenBase64) {
+		this.imagenBase64 = imagenBase64;
 	}
 	
 	
