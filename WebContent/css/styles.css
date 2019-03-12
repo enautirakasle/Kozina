@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#foto-alimento{
+.foto-alimento{
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;

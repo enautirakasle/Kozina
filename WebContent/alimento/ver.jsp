@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css"/>
 </head>
 <body>
-	<img id="foto-alimento" src="${pageContext.request.contextPath}/imagen/alimento?id=${alimento.id}"/>
+	<img class="foto-alimento" src="${pageContext.request.contextPath}/imagen/alimento?id=${alimento.id}"/>
+	<img class="foto-alimento" src="${alimento.imagenBase64}"/>
 	<table>
 		<tr>
 			<td>id:</td>
