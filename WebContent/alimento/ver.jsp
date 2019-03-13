@@ -13,6 +13,8 @@
 		<img class="foto-alimento" src="${pageContext.request.contextPath}/imagen/alimento?id=${alimento.id}"/>
 		<img class="foto-alimento" src="${alimento.imagenBase64}"/>
 		
+		<br>
+		
 		<table>
 			<tr>
 				<td>id:</td>
