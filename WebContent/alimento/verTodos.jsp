@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Alimentos - Eskatza</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css"/>
 </head>
 <body>
 <header>
