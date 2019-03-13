@@ -8,13 +8,14 @@
 <title>Editar alimento</title>
 </head>
 <body>
+	<p>Editar y guardar</p>
 	<form action="${pageContext.request.contextPath}/alimento/cambiar" method="POST">
 		<input type="hidden" name="id" value="${alimento.id}"/>
 		
 		<label for="nombre">Nombre</label>
   		<input type="text" name="nombre" id="nombre" value="${alimento.nombre}"/><br>
   		
-  		<label for="nombre">Descripción</label>
+  		<label for="nombre">DescripciÃ³n</label>
   		<input type="text" name="descripcion" id="descripcion" value="${alimento.descripcion}"/><br>
   		
 		<input type="submit" value="Guardar" name="guardar"/>
