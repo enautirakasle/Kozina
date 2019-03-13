@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+body{
+	font-family: arial;
+}
 .foto-alimento{
 	width: 200px;
 	height: 200px;
