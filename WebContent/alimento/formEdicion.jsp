@@ -8,7 +8,10 @@
 <title>Editar alimento</title>
 </head>
 <body>
+
+	<h2>Edicion de alimento</h2>
 	<p>Editar y guardar</p>
+	
 	<form action="${pageContext.request.contextPath}/alimento/cambiar" method="POST">
 		<input type="hidden" name="id" value="${alimento.id}"/>
 		
