@@ -8,6 +8,8 @@
 <title>Editar - alimento</title>
 </head>
 <body>
+	<h1>Edicion de alimento</h1>
+	
 	<form action="alimento/cambiar" method="post">
 		<input type="hidden" name="id" value="${alimento.id}"/>
 		<table>
