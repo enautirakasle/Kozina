@@ -20,7 +20,7 @@ ${error}
 	</header>
 	<div class="row">
 		<div class="col">
-		<table border="1">
+		<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>id</th>
