@@ -18,6 +18,9 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 		super();
 	}
 
+	/**
+	 * selecciona todos los alimentos y devuelve un arrayList de alimentos
+	 */
 	@Override
 	public ArrayList<Alimento> selectAll() {
 
@@ -43,6 +46,9 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 		return alimentos;
 	}
 
+	/**
+	 * devuelve el alimento que tiene la id recibida
+	 */
 	@Override
 	public Alimento select(int id) {
 		
