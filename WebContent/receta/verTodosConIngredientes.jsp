@@ -8,7 +8,9 @@
 <title>Recetas</title>
 </head>
 <body>
-<!-- todo poner div container y row -->
+
+<!-- todo poner div row -->
+<div class="container">
 	<h1>Todas las recetas</h1>
 	<c:forEach items="${recetas}" var="receta">
 	<table border="1">
@@ -32,7 +34,7 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<b>Elavoración</b>
+						<b>ElavoraciÃ³n</b>
 						<p>${receta.elavoracion}</p>
 						<b>Ingredientes</b>
 						<ul>
@@ -47,5 +49,6 @@
 		</tbody>
 	</table>
 	</c:forEach>
+</div>
 </body>
 </html>
