@@ -12,6 +12,7 @@ import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
  * Servlet implementation class editar
+ * habre el form de edicion de alimento
  */
 @WebServlet("/alimento/editar")
 public class EditarAlimento extends HttpServlet {
