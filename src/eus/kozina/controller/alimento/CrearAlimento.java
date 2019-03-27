@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class CrearAlimento
+ * habre el form de creacion de alimento
  */
 @WebServlet("/alimento/crear")
 public class CrearAlimento extends HttpServlet {
