@@ -16,6 +16,7 @@ import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
  * Servlet implementation class ImagenAlimento
+ * devuelve la imagen del alimento leyendo de un campo Blob
  */
 @WebServlet("/imagen/alimento")
 public class ImagenAlimento extends HttpServlet {
