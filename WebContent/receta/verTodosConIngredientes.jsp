@@ -8,6 +8,7 @@
 <title>Recetas</title>
 </head>
 <body>
+<!-- todo poner div container y row -->
 	<h1>Todas las recetas</h1>
 	<c:forEach items="${recetas}" var="receta">
 	<table border="1">
