@@ -12,6 +12,7 @@ import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
  * Servlet implementation class CambiarAlimento
+ * realiza el update del alimento
  */
 @WebServlet("/alimento/cambiar")
 public class CambiarAlimento extends HttpServlet {
