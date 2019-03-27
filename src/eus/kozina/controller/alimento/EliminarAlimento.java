@@ -14,6 +14,7 @@ import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
  * Servlet implementation class eliminar
+ * hace el delete del alimento
  */
 @WebServlet("/alimento/eliminar")
 public class EliminarAlimento extends HttpServlet {
