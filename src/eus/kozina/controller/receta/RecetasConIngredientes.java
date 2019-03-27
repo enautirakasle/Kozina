@@ -16,6 +16,7 @@ import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
  * Servlet implementation class Recetas
+ * ver las recetas con ingredientes
  */
 @WebServlet("/recetasconingredientes")
 public class RecetasConIngredientes extends HttpServlet {
