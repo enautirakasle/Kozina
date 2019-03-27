@@ -17,6 +17,7 @@ import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
  * Servlet implementation class RecetasCon
+ * muestra todas las recetas de un que contienen un alimento concreto
  */
 @WebServlet("/recetascon")
 public class RecetasCon extends HttpServlet {

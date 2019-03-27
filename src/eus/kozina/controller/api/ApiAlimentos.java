@@ -17,6 +17,7 @@ import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
  * Servlet implementation class ApiAlimentos
+ * devuelve un json de alimentos
  */
 @WebServlet("/api/alimentos")
 public class ApiAlimentos extends HttpServlet {
