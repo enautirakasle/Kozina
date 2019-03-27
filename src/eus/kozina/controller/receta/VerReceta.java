@@ -12,6 +12,7 @@ import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
  * Servlet implementation class VerReceta
+ * muestra una receta con la id
  */
 @WebServlet("/receta/ver")
 public class VerReceta extends HttpServlet {
