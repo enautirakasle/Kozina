@@ -11,6 +11,8 @@
 
 <!-- todo poner div row -->
 <div class="container">
+	<div class="row">
+	<div class="col">
 	<h1>Todas las recetas</h1>
 	<c:forEach items="${recetas}" var="receta">
 	<table border="1">
