@@ -11,6 +11,7 @@ import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
  * Servlet implementation class ver
+ * visualiza un alimento
  */
 @WebServlet("/alimento/ver")
 public class VerAlimento extends HttpServlet {
