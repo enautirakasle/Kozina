@@ -12,6 +12,7 @@ import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
  * Servlet implementation class CambiarReceta
+ * hace un update de una receta
  */
 @WebServlet("/receta/cambiar")
 public class CambiarReceta extends HttpServlet {
@@ -22,16 +23,17 @@ public class CambiarReceta extends HttpServlet {
      */
     public CambiarReceta() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	/*
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+	*/
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
