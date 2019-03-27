@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class EditarReceta
+ * abre el formulario de edicion de receta
  */
 @WebServlet("/receta/editar")
 public class EditarReceta extends HttpServlet {
