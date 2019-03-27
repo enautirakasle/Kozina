@@ -16,13 +16,13 @@
 	<form action="${pageContext.request.contextPath}/alimento/cambiar" method="POST">
 		<input type="hidden" name="id" value="${alimento.id}"/>
 		
-		<label for="nombre">Nombre</label>
+		<button type="button" class="btn btn-primary">Nombre</button>
   		<input type="text" name="nombre" id="nombre" value="${alimento.nombre}"/><br>
   		
-  		<label for="nombre">Descripción</label>
+  		<button type="button" class="btn btn-primary">Descripcion</button>
   		<input type="text" name="descripcion" id="descripcion" value="${alimento.descripcion}"/><br>
   		
-		<input type="submit" value="Guardar" name="guardar"/>
+  		<button name="guardar" type="submit" value="Guardar" class="btn btn-dark">Guardar</button>
 	</form>
 	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
