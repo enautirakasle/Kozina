@@ -12,6 +12,7 @@ import eus.kozina.model.daoimpl.AlimentoModeloImp;
 
 /**
  * Servlet implementation class GuardarAlimento
+ * hace un insert del alimento
  */
 @WebServlet("/alimento/guardar")
 public class GuardarAlimento extends HttpServlet {
