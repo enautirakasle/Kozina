@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class EliminarReceta
+ * realiza un delete de una receta
  */
 @WebServlet("/receta/eliminar")
 public class EliminarReceta extends HttpServlet {
