@@ -1,4 +1,0 @@
-el form
-submit
-
-pasar a bootstrap
