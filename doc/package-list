@@ -1,0 +1,7 @@
+eus.kozina.controller.alimento
+eus.kozina.controller.api
+eus.kozina.controller.receta
+eus.kozina.model
+eus.kozina.model.bean
+eus.kozina.model.dao
+eus.kozina.model.daoimpl

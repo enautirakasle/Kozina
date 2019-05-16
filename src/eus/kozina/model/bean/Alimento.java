@@ -2,6 +2,11 @@ package eus.kozina.model.bean;
 
 import java.io.InputStream;
 
+/**
+ * Esta es una clase que representa alimentos
+ * @author ikaslea
+ * @version 10.4.2019
+ */
 public class Alimento{
 
 	private int id;
@@ -10,15 +15,28 @@ public class Alimento{
 	private InputStream imagenBlob;
 	private String imagenBase64;
 	
+	/**
+	 * 
+	 * @param nombre el nombre del alimento
+	 */
 	public Alimento(String nombre) {
 		super();
 		this.nombre = nombre;
 	}
 
+	/**
+	 * 
+	 * @return int id, devuelve el id del alimentos
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * Komentario sobre el funcionamiento del metodo
+	 * 
+	 * @param id asigna la id al alimento
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
