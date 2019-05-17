@@ -42,6 +42,7 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 
 	@Override
 	public Receta selectReceta(int id) {
+		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
 		try {
 			PreparedStatement pst = this.conexion.prepareStatement("select * from recetas where id=?");
 			pst.setInt(1, id);
@@ -52,6 +53,7 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 				receta.setId(rs.getInt("id"));
 				receta.setDescripcion(rs.getString("descripcion"));
 				receta.setElavoracion(rs.getString("elavoracion"));
+				receta.setIngredientes(ingredienteModelo.ingredientes(id));
 				return receta;
 			}
 		} catch (SQLException e) {
