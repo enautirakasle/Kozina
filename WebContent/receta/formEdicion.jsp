@@ -35,9 +35,7 @@
 						<c:forEach items="${receta.ingredientes}" var="ingrediente">
 							<tr>
 								<td>${ingrediente.alimento.id}</td>
-								<td>
-									<input id="nombreAlimento${ingrediente.alimento.id}" name="nombreAlimento" value="${ingrediente.alimento.nombre}"/>
-								</td>
+								<td>${ingrediente.alimento.nombre}</td>
 								<td>
 									<input id="cantidadAlimento${ingrediente.alimento.id}" name="cantidadAlimento" value="${ingrediente.cantidad}"/>
 								</td>
