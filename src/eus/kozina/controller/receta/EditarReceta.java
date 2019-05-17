@@ -29,7 +29,7 @@ public class EditarReceta extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idReceta = Integer.parseInt(request.getParameter("idReceta"));
+		int idReceta = Integer.parseInt(request.getParameter("id"));
 		//int idReceta = 3;
 		RecetaModeloImp recetaModelo = new RecetaModeloImp();
 		Receta receta = recetaModelo.selectReceta(idReceta);
