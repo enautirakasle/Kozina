@@ -1,4 +1,4 @@
-package eus.kozina.controller.api;
+package eus.kozina.controller.api.alimento;
 
 import java.io.IOException;
 import java.io.PrintWriter;
