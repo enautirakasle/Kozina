@@ -35,9 +35,17 @@
 						<c:forEach items="${receta.ingredientes}" var="ingrediente">
 							<tr>
 								<td>${ingrediente.alimento.id}</td>
-								<td>${ingrediente.alimento.nombre}</td>
-								<td>${ingrediente.cantidad}</td>
-								<td></td>
+								<td>
+									<input id="nombreAlimento${ingrediente.alimento.id}" name="nombreAlimento" value="${ingrediente.alimento.nombre}"/>
+								</td>
+								<td>
+									<input id="cantidadAlimento${ingrediente.alimento.id}" name="cantidadAlimento" value="${ingrediente.cantidad}"/>
+								</td>
+								<td>
+									<a href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">Ver alimento</a>
+									<a href="${pageContext.request.contextPath}/alimento/editar?id=${ingrediente.alimento.id}">Editar alimento</a>
+									<a href="${pageContext.request.contextPath}/alimento/eliminar?id=${ingrediente.alimento.id}">Eliminar alimento</a>
+								</td>
 							</tr>
 						</c:forEach>
 						</tbody>
