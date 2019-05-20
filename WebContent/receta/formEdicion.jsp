@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Editar receta</title>
 </head>
 <body>
 	<div class="container">
@@ -18,11 +18,11 @@
 					method="POST">
 					<input type="hidden" name="id" value="${receta.id}"/>
 					<label for="nombre">Nombre</label>
-					<input type="text" name="nombre" id="nombre" value="${receta.nombre}" /><br>
+					<input type="text" maxlength="64" size="50" name="nombre" id="nombre" value="${receta.nombre}" /><br>
 					<label for="descripcion">Descripción</label>
-					<input type="text" name="descripcion" id="descripcion" value="${receta.descripcion}"/><br>
-					<label for="elavoracion">Elavoración</label>
-					<input type="text" name="elavoracion" id="elavoracion" value="${receta.elavoracion}"/><br>
+					<input type="text" maxlength="256" size="100" name="descripcion" id="descripcion" value="${receta.descripcion}"/><br>
+					<label for="elavoracion">Elavoración</label><br>
+					<textarea rows="10" cols="100" name="elavoracion" id="elavoracion">${receta.elavoracion}</textarea><br>
 					
 					<input type="submit" value="Guardar receta" name="guardar" />
 				</form>
