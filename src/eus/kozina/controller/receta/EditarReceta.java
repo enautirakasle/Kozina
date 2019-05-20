@@ -1,13 +1,17 @@
 package eus.kozina.controller.receta;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import eus.kozina.model.bean.Alimento;
 import eus.kozina.model.bean.Receta;
+import eus.kozina.model.daoimpl.AlimentoModeloImp;
 import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
@@ -35,6 +39,12 @@ public class EditarReceta extends HttpServlet {
 		Receta receta = recetaModelo.selectReceta(idReceta);
 		
 		request.setAttribute("receta", receta);
+		
+		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
+		ArrayList<Alimento> alimentos = alimentoModelo.selectAll();
+		
+		request.setAttribute("alimentos", alimentos);
+		
 		
 		request.getRequestDispatcher("/receta/formEdicion.jsp").forward(request, response);
 	}
