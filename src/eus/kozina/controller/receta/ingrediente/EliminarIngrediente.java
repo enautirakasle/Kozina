@@ -1,4 +1,4 @@
-package eus.kozina.controller.receta;
+package eus.kozina.controller.receta.ingrediente;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
