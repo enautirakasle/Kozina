@@ -44,6 +44,8 @@ public class CambiarReceta extends HttpServlet {
 		String descripcion = request.getParameter("descripcion");
 		String elavoracion = request.getParameter("elavoracion");
 		
+//		String nombreAlimentos = request.getParameter("nombreAlimento");
+		
 		Receta receta = new Receta(nombre);
 		receta.setId(id);
 		receta.setDescripcion(descripcion);
@@ -51,6 +53,8 @@ public class CambiarReceta extends HttpServlet {
 		
 		RecetaModeloImp recetaModelo = new RecetaModeloImp();
 		recetaModelo.update(receta);
+		
+		response.sendRedirect(request.getContextPath() + "/receta/ver?id=" + id);
 	}
 
 }
