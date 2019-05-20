@@ -19,10 +19,10 @@
 				<input type="hidden" name="id" value="${alimento.id}"/>
 				
 				<label for="nombre">Nombre</label>
-		  		<input type="text" name="nombre" id="nombre" value="${alimento.nombre}"/><br>
+		  		<input type="text" maxlength="32" size="32" name="nombre" id="nombre" value="${alimento.nombre}"/><br>
 		  		
-		  		<label for="nombre">DescripciÃ³n</label>
-		  		<input type="text" name="descripcion" id="descripcion" value="${alimento.descripcion}"/><br>
+		  		<label for="nombre">Descripción</label>
+		  		<input type="text" maxlength="128" size="100" name="descripcion" id="descripcion" value="${alimento.descripcion}"/><br>
 		  		
 				<input type="submit" value="Guardar" name="guardar"/>
 			</form>
