@@ -21,7 +21,7 @@
 						id="nombre" value="${receta.nombre}" /><br> <label
 						for="nombre">Descripción</label> <input type="text"
 						name="descripcion" id="descripcion" value="${receta.descripcion}" /><br>
-					<input type="submit" value="Guardar" name="guardar" />
+					<input type="submit" value="Guardar receta" name="guardar" />
 				</form>
 
 				<!-- tabla de ingredientes -->
@@ -54,7 +54,7 @@
 				<form action="${pageContext.request.contextPath}/receta/anadir/ingrediente" method="post">
 					<input type="text" name="alimento"/>
 					<input type="number" name="cantidad"/>
-					<input type="submit" value="Anadir ingrediente" name="guardar" />
+					<input type="submit" value="Anadir ingrediente a receta" name="guardar" />
 				</form>
 
 
