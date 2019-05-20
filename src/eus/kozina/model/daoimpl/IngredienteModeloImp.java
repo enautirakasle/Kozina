@@ -40,5 +40,18 @@ public class IngredienteModeloImp extends Conector implements IngredienteModelo 
 		}
 		return ingredientes;
 	}
+	
+	public void addIngrediente(int receta, int alimento, int cantidad) {
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("insert into ingredientes(id_receta, id_alimento, cantidad) values (?, ?, ?)");
+			pst.setInt(1, receta);
+			pst.setInt(2, alimento);
+			pst.setInt(3, cantidad);
+			pst.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 }

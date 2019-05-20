@@ -7,54 +7,44 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.bean.Receta;
-import eus.kozina.model.daoimpl.RecetaModeloImp;
+import eus.kozina.model.daoimpl.IngredienteModeloImp;
 
 /**
- * Servlet implementation class CambiarReceta
- * hace un update de una receta
+ * Servlet implementation class AnadirIngrediente
  */
-@WebServlet("/receta/cambiar")
-public class CambiarReceta extends HttpServlet {
+@WebServlet("/receta/anadir/ingrediente")
+public class AnadirIngrediente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CambiarReceta() {
+    public AnadirIngrediente() {
         super();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	/*
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-	*/
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		String nombre = request.getParameter("nombre");
-		String descripcion = request.getParameter("descripcion");
-		String elavoracion = request.getParameter("elavoracion");
+	
+		int idReceta = Integer.parseInt(request.getParameter("idReceta"));
+		int idAlimento = Integer.parseInt(request.getParameter("alimento"));
+		int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 		
-//		String nombreAlimentos = request.getParameter("nombreAlimento");
+		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
+		ingredienteModelo.addIngrediente(idReceta, idAlimento, cantidad);
 		
-		Receta receta = new Receta(nombre);
-		receta.setId(id);
-		receta.setDescripcion(descripcion);
-		receta.setElavoracion(elavoracion);
-		
-		RecetaModeloImp recetaModelo = new RecetaModeloImp();
-		recetaModelo.update(receta);
-		
-		response.sendRedirect(request.getContextPath() + "/receta/ver?id=" + id);
+		response.sendRedirect(request.getContextPath() + "/receta/editar?id="+idReceta);
+
 	}
 
 }
