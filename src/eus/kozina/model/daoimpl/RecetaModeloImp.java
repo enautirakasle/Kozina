@@ -124,5 +124,23 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 		}
 	}
 
+	@Override
+	public int getId(String nombreReceta) {
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("select id from recetas where nombre = ?");
+			pst.setString(1, nombreReceta);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				return rs.getInt("id");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
 
 }

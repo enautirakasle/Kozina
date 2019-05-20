@@ -16,4 +16,6 @@ public interface RecetaModelo {
 	int update(Receta receta);
 	
 	void insert(Receta receta);
+	
+	int getId(String nombreReceta);
 }
