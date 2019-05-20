@@ -18,7 +18,7 @@ public class IngredienteModeloImp extends Conector implements IngredienteModelo 
 
 		try {
 			PreparedStatement pst = this.conexion.prepareStatement(
-					"SELECT alimentos.*, ingredientes.cantidad as cantidad FROM ingredientes INNER JOIN alimentos on ingredientes.id_alimento= alimentos.id WHERE ingredientes.id_receta=?");
+					"SELECT alimentos.*, ingredientes.cantidad as cantidad, ingredientes.id as id_ingrediente FROM ingredientes INNER JOIN alimentos on ingredientes.id_alimento= alimentos.id WHERE ingredientes.id_receta=?");
 			pst.setInt(1, id_receta);
 
 			ResultSet rs = pst.executeQuery();
@@ -29,6 +29,7 @@ public class IngredienteModeloImp extends Conector implements IngredienteModelo 
 				alimento.setDescripcion(rs.getString("descripcion"));
 				
 				Ingrediente ingrediente = new Ingrediente();
+				ingrediente.setId(rs.getInt("id_ingrediente"));
 				ingrediente.setAlimento(alimento);
 				ingrediente.setCantidad(rs.getInt("cantidad"));
 			
