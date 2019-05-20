@@ -53,13 +53,13 @@
 				<!-- anadir ingrediente a receta -->
 				<form action="${pageContext.request.contextPath}/receta/anadir/ingrediente" method="post">
 					<input type="hidden" name="idReceta" value="${receta.id}"/>
-					<select name="nombre">
+					<select name="alimento">
 						<option value=""></option>
 						<c:forEach items="${alimentos}" var="alimento">
 							<option value="${alimento.id}">${alimento.nombre}</option>
 						</c:forEach>
 					</select>
-					<input type="number" name="cantidad"/>
+					<input type="number" name="cantidad" value="0"/>
 					<input type="submit" value="Anadir ingrediente a receta" name="guardar" />
 				</form>
 
