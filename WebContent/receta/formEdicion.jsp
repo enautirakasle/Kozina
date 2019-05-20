@@ -39,9 +39,9 @@
 							<tr>
 								<td>${ingrediente.alimento.id}</td>
 								<td>${ingrediente.alimento.nombre}</td>
-								<td><input id="cantidadAlimento${ingrediente.alimento.id}"
-									name="cantidadAlimento" value="${ingrediente.cantidad}" /></td>
+								<td><input id="cantidadAlimento${ingrediente.alimento.id}" name="cantidadAlimento" value="${ingrediente.cantidad}"/></td>
 								<td>
+									<a href="${pageContext.request.contextPath}/ingrediente/eliminar?id=${ingrediente.id}&idReceta=${receta.id}">Eliminar ingrediente</a>
 									<a href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">Ver alimento</a>
 									<a href="${pageContext.request.contextPath}/alimento/editar?id=${ingrediente.alimento.id}">Editar alimento</a>
 								</td>
