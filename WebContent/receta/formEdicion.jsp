@@ -13,6 +13,7 @@
 			<div class="col">
 				<h2>Edicion de una receta</h2>
 				<p>Editar y guardar</p>
+
 				<form action="${pageContext.request.contextPath}/receta/cambiar"
 					method="POST">
 					<input type="hidden" name="id" value="${receta.id}" /> <label
@@ -20,36 +21,43 @@
 						id="nombre" value="${receta.nombre}" /><br> <label
 						for="nombre">Descripción</label> <input type="text"
 						name="descripcion" id="descripcion" value="${receta.descripcion}" /><br>
+					<input type="submit" value="Guardar" name="guardar" />
+				</form>
 
-					<!-- tabla de ingredientes -->
-					<table border="1">
-						<thead>
-							<tr>
-								<th>id</th>
-								<th>nombre</th>
-								<th>cantidad</th>
-								<th>accion</th>
-							</tr>
-						</thead>
-						<tbody>
+				<!-- tabla de ingredientes -->
+				<table border="1">
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>nombre</th>
+							<th>cantidad</th>
+							<th>accion</th>
+						</tr>
+					</thead>
+					<tbody>
 						<c:forEach items="${receta.ingredientes}" var="ingrediente">
 							<tr>
 								<td>${ingrediente.alimento.id}</td>
 								<td>${ingrediente.alimento.nombre}</td>
-								<td>
-									<input id="cantidadAlimento${ingrediente.alimento.id}" name="cantidadAlimento" value="${ingrediente.cantidad}"/>
-								</td>
+								<td><input id="cantidadAlimento${ingrediente.alimento.id}"
+									name="cantidadAlimento" value="${ingrediente.cantidad}" /></td>
 								<td>
 									<a href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">Ver alimento</a>
 									<a href="${pageContext.request.contextPath}/alimento/editar?id=${ingrediente.alimento.id}">Editar alimento</a>
-									<a href="${pageContext.request.contextPath}/alimento/eliminar?id=${ingrediente.alimento.id}">Eliminar alimento</a>
 								</td>
 							</tr>
 						</c:forEach>
-						</tbody>
-					</table>
-					<input type="submit" value="Guardar" name="guardar" />
+					</tbody>
+				</table>
+
+				<!-- anadir ingrediente a receta -->
+				<form action="${pageContext.request.contextPath}/receta/anadir/ingrediente" method="post">
+					<input type="text" name="alimento"/>
+					<input type="number" name="cantidad"/>
+					<input type="submit" value="Anadir ingrediente" name="guardar" />
 				</form>
+
+
 			</div>
 		</div>
 	</div>
