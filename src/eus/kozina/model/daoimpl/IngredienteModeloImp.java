@@ -54,4 +54,19 @@ public class IngredienteModeloImp extends Conector implements IngredienteModelo 
 		
 	}
 
+	@Override
+	public void deleteIngrediente(int idIngrediente) {
+		PreparedStatement pst;
+		try {
+			pst = this.conexion.prepareStatement("delete from ingredientes where id=?");
+			pst.setInt(1, idIngrediente);
+			pst.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
 }
