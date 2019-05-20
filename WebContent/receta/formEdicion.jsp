@@ -16,11 +16,14 @@
 
 				<form action="${pageContext.request.contextPath}/receta/cambiar"
 					method="POST">
-					<input type="hidden" name="id" value="${receta.id}" /> <label
-						for="nombre">Nombre</label> <input type="text" name="nombre"
-						id="nombre" value="${receta.nombre}" /><br> <label
-						for="nombre">Descripción</label> <input type="text"
-						name="descripcion" id="descripcion" value="${receta.descripcion}" /><br>
+					<input type="hidden" name="id" value="${receta.id}"/>
+					<label for="nombre">Nombre</label>
+					<input type="text" name="nombre" id="nombre" value="${receta.nombre}" /><br>
+					<label for="descripcion">Descripción</label>
+					<input type="text" name="descripcion" id="descripcion" value="${receta.descripcion}"/><br>
+					<label for="elavoracion">Elavoración</label>
+					<input type="text" name="elavoracion" id="elavoracion" value="${receta.elavoracion}"/><br>
+					
 					<input type="submit" value="Guardar receta" name="guardar" />
 				</form>
 
