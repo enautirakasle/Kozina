@@ -1,6 +1,7 @@
 package eus.kozina.model.bean;
 
 public class Ingrediente {
+	private int id;
 	private int cantidad;
 	private Alimento alimento;
 	private Receta receta;
@@ -14,6 +15,14 @@ public class Ingrediente {
 		this.cantidad = cantidad;
 		this.alimento = alimento;
 		this.receta = receta;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getCantidad() {
