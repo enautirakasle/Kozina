@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import eus.kozina.model.daoimpl.IngredienteModeloImp;
+
 /**
  * Servlet implementation class EliminarIngrediente
  */
@@ -26,7 +28,13 @@ public class EliminarIngrediente extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int idIngrediente = Integer.parseInt(request.getParameter("id"));
+		int idReceta = Integer.parseInt(request.getParameter("idReceta"));
 		
+		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
+		ingredienteModelo.deleteIngrediente(idIngrediente);
+		
+		response.sendRedirect(request.getContextPath() + "/receta/editar?id=" + idReceta);
 	}
 
 	/**
