@@ -34,9 +34,11 @@ public class Alimentos extends HttpServlet {
 			request.setAttribute("error", error);
 		}
 		
-		
+		//conseguir datos
 		AlimentoModeloImp alimentoModelo =new AlimentoModeloImp();
 		request.setAttribute("alimentos", alimentoModelo.selectAll());
+		
+		//abrir vista
 		request.getRequestDispatcher("alimento/verTodos.jsp").forward(request, response);
 	}
 

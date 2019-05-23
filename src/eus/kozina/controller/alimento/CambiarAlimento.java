@@ -38,17 +38,22 @@ public class CambiarAlimento extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//recoger datos del cliente
 		int id = Integer.parseInt(request.getParameter("id"));
 		String nombre = request.getParameter("nombre");
 		String descripcion = request.getParameter("descripcion");
 		
+		//crear el objeto alimento
 		Alimento alimento = new Alimento(nombre);
 		alimento.setId(id);
 		alimento.setDescripcion(descripcion);
 		
+		//cambiar el alimento en la BBDD
 		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
 		alimentoModelo.update(alimento);
 		
+		//redireccionar a controlador
 		response.sendRedirect(request.getContextPath() + "/alimentos");
 	}
 
