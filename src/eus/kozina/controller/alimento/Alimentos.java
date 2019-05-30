@@ -28,6 +28,8 @@ public class Alimentos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//TODO  hau hobeto beste lehio baten, ingredinte bat ezabatzean errorea dagoenean gertatzen da
+		
+		//este es el controlador alimentos y dejo este comentario
 		String error = request.getParameter("error");
 		if(error != null) {
 			request.setAttribute("error", error);
