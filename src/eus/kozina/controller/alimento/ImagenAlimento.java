@@ -43,16 +43,21 @@ public class ImagenAlimento extends HttpServlet {
 
 		// InputStream input = resultSet.getBinaryStream("imageColumnName");
 		InputStream input = alimento.getImagenBlob();
+		
 		OutputStream output = response.getOutputStream();
 		response.setContentType("image/gif");
 
-		byte[] buf = new byte[1024];
-		int count = 0;
-		while ((count = input.read(buf)) >= 0) {
-			output.write(buf, 0, count);
+		if(input != null) {
+			byte[] buf = new byte[1024];
+			int count = 0;
+			while ((count = input.read(buf)) >= 0) {
+				output.write(buf, 0, count);
+			}
+			input.close();
 		}
+		
 		output.close();
-		input.close();
+		
 	}
 
 	/**

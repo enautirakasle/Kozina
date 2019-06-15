@@ -1,6 +1,4 @@
-package eus.kozina.controller.alimento;
-
-/*comentario en el masterr*/
+package eus.kozina.controller.receta;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,39 +7,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.daoimpl.AlimentoModeloImp;
-
 /**
- * Servlet implementation class alimentos
- * visualiza todos los alimentos
+ * Servlet implementation class CrearReceta
  */
-@WebServlet("/alimentos")
-public class Alimentos extends HttpServlet {
+@WebServlet("/receta/crear")
+public class CrearReceta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Alimentos() {
+    public CrearReceta() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TODO  hau hobeto beste lehio baten, ingredinte bat ezabatzean errorea dagoenean gertatzen da
-		String error = request.getParameter("error");
-		if(error != null) {
-			request.setAttribute("error", error);
-		}
-		
-		//conseguir datos
-		AlimentoModeloImp alimentoModelo =new AlimentoModeloImp();
-		request.setAttribute("alimentos", alimentoModelo.selectAll());
-		
-		//abrir vista
-		request.getRequestDispatcher("alimento/verTodos.jsp").forward(request, response);
+		request.getRequestDispatcher("/receta/formNuevo.jsp").forward(request, response);
 	}
 
 	/**

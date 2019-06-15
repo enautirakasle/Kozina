@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Editar receta</title>
 </head>
 <body>
 	<div class="container">
@@ -16,6 +16,7 @@
 
 				<form action="${pageContext.request.contextPath}/receta/cambiar"
 					method="POST">
+
 					<input type="hidden" name="id" value="${receta.id}" /> <label
 						for="nombre">Nombre</label> <input type="text" name="nombre"
 						id="nombre" value="${receta.nombre}" /><br> <label
@@ -23,6 +24,7 @@
 					<textarea name="descripcion" rows="10" cols="100">${receta.descripcion}</textarea>
 					<br> <input type="submit" value="Guardar receta"
 						name="guardar" />
+
 				</form>
 
 				<!-- tabla de ingredientes -->

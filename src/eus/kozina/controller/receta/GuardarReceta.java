@@ -1,4 +1,4 @@
-package eus.kozina.controller.alimento;
+package eus.kozina.controller.receta;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,21 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import eus.kozina.model.bean.Alimento;
-import eus.kozina.model.daoimpl.AlimentoModeloImp;
+import eus.kozina.model.bean.Receta;
+import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
- * Servlet implementation class CambiarAlimento
- * realiza el update del alimento
+ * Servlet implementation class GuardarReceta
  */
-@WebServlet("/alimento/cambiar")
-public class CambiarAlimento extends HttpServlet {
+@WebServlet("/receta/guardar")
+public class GuardarReceta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CambiarAlimento() {
+    public GuardarReceta() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,23 +37,24 @@ public class CambiarAlimento extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//recoger datos del cliente
-		int id = Integer.parseInt(request.getParameter("id"));
 		String nombre = request.getParameter("nombre");
 		String descripcion = request.getParameter("descripcion");
+		String elavoracion = request.getParameter("elavoracion");
 		
-		//crear el objeto alimento
-		Alimento alimento = new Alimento(nombre);
-		alimento.setId(id);
-		alimento.setDescripcion(descripcion);
+		Receta receta = new Receta(nombre);
+		receta.setDescripcion(descripcion);
+		receta.setElavoracion(elavoracion);
 		
-		//cambiar el alimento en la BBDD
-		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
-		alimentoModelo.update(alimento);
+		RecetaModeloImp recetaModelo = new RecetaModeloImp();
+		recetaModelo.insert(receta);
 		
-		//redireccionar a controlador
-		response.sendRedirect(request.getContextPath() + "/alimentos");
+		int id = recetaModelo.getId(receta.getNombre());
+		
+		response.sendRedirect(request.getContextPath() + "/receta/editar?id=" + id);
+		
+		
+		
+		
 	}
 
 }
