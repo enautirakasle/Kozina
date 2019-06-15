@@ -65,8 +65,18 @@ public class IngredienteModeloImp extends Conector implements IngredienteModelo 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
+	}
+
+	public void updateIngrediente(int idIngrediente, int cantidadAlimento) {
+		PreparedStatement pst;
+		try {
+			pst = this.conexion.prepareStatement("update ingredientes set cantidad=? where id=?");
+			pst.setInt(1, cantidadAlimento);
+			pst.setInt(2, idIngrediente);
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
