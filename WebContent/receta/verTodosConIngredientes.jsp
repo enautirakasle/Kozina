@@ -36,7 +36,7 @@
 							</tr>
 							<tr>
 								<td colspan="4">
-									<b>ElavoraciÃ³n</b>
+									<b>Elavoración</b>
 									<p>${receta.elavoracion}</p>
 									<b>Ingredientes</b>
 									<ul>
