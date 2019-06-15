@@ -1,0 +1,15 @@
+ver todas las recetas con sus ingredientes ...
+ver version reducida de todas las recetas
+ver receta
+eliminar receta
+editar receta
+
+añadir ingrediente
+eliminar ingrediente
+cambiar ingrediente
+
+ver alimentos
+ver alimento
+crear alimento
+editar alimento
+eliminar alimento
