@@ -58,7 +58,7 @@
 								<td>
 									<a href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">Ver alimento</a>
 									<a href="${pageContext.request.contextPath}/alimento/editar?id=${ingrediente.alimento.id}">Editar alimento</a>
-									<a href="${pageContext.request.contextPath}/alimento/eliminar?id=${ingrediente.alimento.id}">Eliminar alimento</a>
+									<!-- <a href="${pageContext.request.contextPath}/alimento/eliminar?id=${ingrediente.alimento.id}">Eliminar alimento</a> -->
 								</td>
 							</tr>
 						</c:forEach>
