@@ -39,7 +39,8 @@
 						<c:forEach items="${receta.ingredientes}" var="ingrediente">
 							<tr>
 								<td>${ingrediente.alimento.id}</td>
-								<td>${ingrediente.alimento.nombre}</td>
+								<td><a
+									href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a></td>
 								<td><form method="post"
 										action="${pageContext.request.contextPath}/receta/ingrediente/cambiar/cantidad">
 										<input type="hidden" name="idIngrediente"
@@ -51,11 +52,7 @@
 									</form></td>
 								<td><a
 									href="${pageContext.request.contextPath}/ingrediente/eliminar?id=${ingrediente.id}&idReceta=${receta.id}">Eliminar
-										ingrediente</a> <a
-									href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">Ver
-										alimento</a> <a
-									href="${pageContext.request.contextPath}/alimento/editar?id=${ingrediente.alimento.id}">Editar
-										alimento</a></td>
+										ingrediente</a>
 							</tr>
 						</c:forEach>
 					</tbody>
