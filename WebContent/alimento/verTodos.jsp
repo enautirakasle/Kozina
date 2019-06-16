@@ -11,22 +11,17 @@
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
 <link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+	integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E"
+	crossorigin="anonymous">
+<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/styles.css" />
 </head>
 <body>
 
 	<!-- igrediente bat ezabatzen denean errore bat jaurtitzen da -->
 	${error}
-	<header>
-		<nav class="navbar navbar-light bg-light justify-content-end mb-1">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="btn btn-primary"
-					href="${pageContext.request.contextPath}/alimento/crear">+
-						Alimento</a></li>
-			</ul>
-		</nav>
-
-	</header>
+	<%@ include file="/partes/header.jsp"%>
 	<div class="container">
 
 
