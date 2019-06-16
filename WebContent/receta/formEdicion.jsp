@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Editar receta</title>
+<%@ include file="/partes/third_party/styles.jsp"%>
 </head>
 <body>
 	<div class="container">
