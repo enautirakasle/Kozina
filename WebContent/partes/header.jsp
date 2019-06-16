@@ -8,6 +8,12 @@
 			<li class="nav-item"><a class="btn btn-primary"
 				href="${pageContext.request.contextPath}/alimento/crear"><i
 					class="fas fa-plus"></i> Alimento </a></li>
+			<li class="nav-item"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/alimentos">Ver
+					alimentos</a></li>
+			<li class="nav-item"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/recetasconingredientes">Todas
+					las recetas</a></li>
 		</ul>
 	</nav>
 
