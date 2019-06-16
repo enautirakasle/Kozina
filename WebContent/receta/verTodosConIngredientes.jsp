@@ -13,46 +13,48 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-		
+
 				<h1>Todas las recetas</h1>
 				<c:forEach items="${recetas}" var="receta">
-				<table border="1">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>nombre</th>
-							<th>descripcion</th>
-							<th>acciones</th>
-						</tr>
-					</thead>
-					<tbody>
-						
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th class="w-auto">id</th>
+								<th class="w-25">nombre</th>
+								<th class="w-50">descripcion</th>
+								<th class="w-auto">acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+
 							<tr>
 								<td>${receta.id}</td>
 								<td><a href="receta/ver?id=${receta.id}">${receta.nombre}</a></td>
 								<td>${receta.descripcion}</td>
-								<td> <a
-									href="receta/editar?id=${receta.id}">Editar</a> <a
-									href="receta/eliminar?id=${receta.id}">Eliminar</a></td>
+								<td class="text-right"><a class="btn btn-outline-dark"
+									href="receta/editar?id=${receta.id}"><i
+										class="fas fa-pencil-alt"></i></a> <a class="btn btn-outline-dark"
+									href="receta/eliminar?id=${receta.id}"><i
+										class="far fa-trash-alt"></i></a></td>
 							</tr>
 							<tr>
-								<td colspan="4">
-									<b>Elavoración</b>
-									<p>${receta.elavoracion}</p>
-									<b>Ingredientes</b>
+								<td colspan="4"><b>Elavoración</b>
+									<p>${receta.elavoracion}</p> <b>Ingredientes</b>
 									<ul>
-									<c:forEach items="${receta.ingredientes}" var="ingrediente">
-										<li><a href="alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a> - ${ingrediente.cantidad} gr (<a href="recetascon?id_alimento=${ingrediente.alimento.id}">Ver recetas con ${ingrediente.alimento.nombre}</a>)</li>
-									</c:forEach>
-									</ul>
-								</td>
-								
+										<c:forEach items="${receta.ingredientes}" var="ingrediente">
+											<li><a href="alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a>
+												- ${ingrediente.cantidad} gr (<a
+												href="recetascon?id_alimento=${ingrediente.alimento.id}">Ver
+													recetas con ${ingrediente.alimento.nombre}</a>)</li>
+										</c:forEach>
+									</ul></td>
+
 							</tr>
-						
-					</tbody>
-				</table>
+
+						</tbody>
+					</table>
 				</c:forEach>
-			
+
 			</div>
 		</div>
 	</div>
