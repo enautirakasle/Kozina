@@ -29,7 +29,7 @@
 				</form>
 
 				<!-- tabla de ingredientes -->
-				<table border="1">
+				<table class="table">
 					<thead>
 						<tr>
 							<th>id</th>
@@ -44,18 +44,24 @@
 								<td>${ingrediente.alimento.id}</td>
 								<td><a
 									href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a></td>
-								<td><form method="post"
+								<td><form  class="form-inline" method="post"
 										action="${pageContext.request.contextPath}/receta/ingrediente/cambiar/cantidad">
+										
 										<input type="hidden" name="idIngrediente"
 											value="${ingrediente.id}" /> <input type="hidden"
-											name="idReceta" value="${receta.id}" /> <input
-											id="cantidadAlimento" name="cantidadAlimento"
-											value="${ingrediente.cantidad}" /> <input type="submit"
-											value="Guardar" />
+											name="idReceta" value="${receta.id}" />
+										
+										<label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+  										<input type="text" class="form-control mb-2 mr-2" id="cantidadAlimento" name="cantidadAlimento" value="${ingrediente.cantidad}" placeholder="cantidad">
+										
+										<button type="submit" class="btn btn-lg btn-outline-success mb-2">
+											<i class="far fa-save"></i>
+										</button>
+
 									</form></td>
-								<td><a
-									href="${pageContext.request.contextPath}/ingrediente/eliminar?id=${ingrediente.id}&idReceta=${receta.id}">Eliminar
-										ingrediente</a>
+								<td><a class="btn btn-outline-danger"
+									href="${pageContext.request.contextPath}/ingrediente/eliminar?id=${ingrediente.id}&idReceta=${receta.id}"><i
+										class="far fa-trash-alt"></i></a>
 							</tr>
 						</c:forEach>
 					</tbody>
