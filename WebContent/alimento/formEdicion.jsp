@@ -28,7 +28,7 @@
 				    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
 				  </div>
 		  		
-				<input type="submit" value="Guardar" name="guardar"/>
+				  <button id="guardarAlimento" name="guardar" type="submit" class="btn btn-primary">Guardar alimento</button>
 			</form>
 		</div>
 	</div>

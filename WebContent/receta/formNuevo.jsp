@@ -32,7 +32,8 @@
 					<textarea class="form-control" name="elavoracion" id="elavoracion" rows="3">${receta.elavoracion}</textarea>
 				</div>
 		  		
-				<input type="submit" value="Guardar" name="guardar"/>
+				<button id="guardarReceta" name="guardar" type="submit" class="btn btn-primary">Guardar receta</button>
+				
 			</form>
 			</div>
 		</div>

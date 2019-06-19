@@ -31,7 +31,7 @@
 						<textarea class="form-control" name="descripcion" id="descripcion" rows="3">${receta.descripcion}</textarea>
 					</div>
 
-					<input type="submit" value="Guardar receta" name="guardar" />
+					<button id="guardarReceta" name="guardar" type="submit" class="btn btn-primary">Guardar receta</button>
 
 				</form>
 
