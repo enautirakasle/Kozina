@@ -12,6 +12,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
+		<h2>Editar un plato</h2>
+			<p>Cambiar y guardar</p>
+			
 			<form action="${pageContext.request.contextPath}/receta/guardar" method="POST">
 				
 				<label for="nombre">Nombre</label>

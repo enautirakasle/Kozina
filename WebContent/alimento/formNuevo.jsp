@@ -12,6 +12,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
+			<h2>Crear nuevo alimento</h2>
+			<p>Crear y guardar</p>
 			<form action="${pageContext.request.contextPath}/alimento/guardar" method="POST">
 				
 				<label for="nombre">Nombre</label>

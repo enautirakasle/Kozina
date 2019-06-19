@@ -13,7 +13,7 @@
 	<div class="row">
 		<div class="col">
 			<h2>Edicion de alimento</h2>
-			<p>Editar y guardar</p>
+			<p>Cambiar y guardar</p>
 			
 			<form action="${pageContext.request.contextPath}/alimento/cambiar" method="POST">
 				<input type="hidden" name="id" value="${alimento.id}"/>
