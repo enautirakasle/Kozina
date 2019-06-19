@@ -17,14 +17,20 @@
 			
 			<form action="${pageContext.request.contextPath}/receta/guardar" method="POST">
 				
-				<label for="nombre">Nombre</label>
-		  		<input type="text" name="nombre" id="nombre" value=""/><br>
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="form-control" name="nombre" id="nombre" value="" placeholder="Introduce el nombre">
+				</div>
+
+				<div class="form-group">
+					<label for="descripcion">DescripciÃ³n</label>
+					<textarea class="form-control" name="descripcion" id="descripcion" rows="3">${receta.descripcion}</textarea>
+				</div>
 		  		
-		  		<label for="nombre">Descripción</label>
-		  		<input type="text" name="descripcion" id="descripcion" value=""/><br>
-		  		
-		  		<label for="nombre">Elavoración</label>
-		  		<input type="text" name="elavoracion" id="elavoracion" value=""/><br>
+				<div class="form-group">
+					<label for="descripcion">ElavoraciÃ³n</label>
+					<textarea class="form-control" name="elavoracion" id="elavoracion" rows="3">${receta.elavoracion}</textarea>
+				</div>
 		  		
 				<input type="submit" value="Guardar" name="guardar"/>
 			</form>

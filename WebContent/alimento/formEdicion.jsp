@@ -18,11 +18,15 @@
 			<form action="${pageContext.request.contextPath}/alimento/cambiar" method="POST">
 				<input type="hidden" name="id" value="${alimento.id}"/>
 				
-				<label for="nombre">Nombre</label>
-		  		<input type="text" maxlength="32" size="32" name="nombre" id="nombre" value="${alimento.nombre}"/><br>
-		  		
-		  		<label for="nombre">Descripción</label>
-		  		<input type="text" maxlength="128" size="100" name="descripcion" id="descripcion" value="${alimento.descripcion}"/><br>
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="form-control" name="nombre" id="nombre" value="${alimento.nombre}" placeholder="Introduce el nombre">
+				</div>
+
+				  <div class="form-group">
+				    <label for="descripcion">Descripciï¿½n</label>
+				    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+				  </div>
 		  		
 				<input type="submit" value="Guardar" name="guardar"/>
 			</form>

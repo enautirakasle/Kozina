@@ -16,11 +16,15 @@
 			<p>Crear y guardar</p>
 			<form action="${pageContext.request.contextPath}/alimento/guardar" method="POST">
 				
-				<label for="nombre">Nombre</label>
-		  		<input type="text" name="nombre" id="nombre" value=""/><br>
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="form-control" name="nombre" id="nombre" value="" placeholder="Introduce el nombre">
+				</div>
 		  		
-		  		<label for="nombre">Descripción</label>
-		  		<input type="text" name="descripcion" id="descripcion" value=""/><br>
+				<div class="form-group">
+					<label for="descripcion">DescripciÃ³n</label>
+					<textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+				</div>
 		  		
 				<input type="submit" value="Guardar" name="guardar"/>
 			</form>

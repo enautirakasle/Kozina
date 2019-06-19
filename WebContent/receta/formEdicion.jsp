@@ -20,10 +20,17 @@
 				<form action="${pageContext.request.contextPath}/receta/cambiar" method="POST">
 
 					<input type="hidden" name="id" value="${receta.id}" />
-					<label for="nombre">Nombre</label>
-					<input type="text" name="nombre" id="nombre" value="${receta.nombre}" />
-					<label for="nombre">Descripci�n</label>
-					<textarea name="descripcion" rows="10" cols="100">${receta.descripcion}</textarea>
+
+					<div class="form-group">
+						<label for="nombre">Nombre</label>
+						<input type="text" class="form-control" name="nombre" id="nombre" value="${receta.nombre}" placeholder="Introduce el nombre">
+					</div>
+
+					<div class="form-group">
+						<label for="descripcion">Descripción</label>
+						<textarea class="form-control" name="descripcion" id="descripcion" rows="3">${receta.descripcion}</textarea>
+					</div>
+
 					<input type="submit" value="Guardar receta" name="guardar" />
 
 				</form>
