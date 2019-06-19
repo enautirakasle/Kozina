@@ -29,33 +29,41 @@
 				</form>
 
 				<!-- tabla de ingredientes -->
-				<table border="1">
+				<table class="table">
 					<thead>
 						<tr>
 							<th>id</th>
 							<th>nombre</th>
 							<th>cantidad</th>
-							<th>accion</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${receta.ingredientes}" var="ingrediente">
 							<tr>
 								<td>${ingrediente.alimento.id}</td>
-								<td><a
-									href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}">${ingrediente.alimento.nombre}</a></td>
-								<td><form method="post"
+								<td><a data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+									href="${pageContext.request.contextPath}/alimento/ver?id=${ingrediente.alimento.id}" >${ingrediente.alimento.nombre}</a></td>
+								<td>
+									<form  class="form-inline" method="post"
 										action="${pageContext.request.contextPath}/receta/ingrediente/cambiar/cantidad">
+										
 										<input type="hidden" name="idIngrediente"
 											value="${ingrediente.id}" /> <input type="hidden"
-											name="idReceta" value="${receta.id}" /> <input
-											id="cantidadAlimento" name="cantidadAlimento"
-											value="${ingrediente.cantidad}" /> <input type="submit"
-											value="Guardar" />
-									</form></td>
-								<td><a
-									href="${pageContext.request.contextPath}/ingrediente/eliminar?id=${ingrediente.id}&idReceta=${receta.id}">Eliminar
-										ingrediente</a>
+											name="idReceta" value="${receta.id}" />
+										
+										<label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+  										<input type="text" class="form-control mb-2 mr-2" id="cantidadAlimento" name="cantidadAlimento" value="${ingrediente.cantidad}" placeholder="cantidad">
+										
+										<button type="submit" class="btn btn-lg btn-outline-success mb-2 mr-5">
+											<i class="far fa-save"></i>
+										</button>
+										
+										<a class="btn btn-lg btn-outline-danger mb-2" href="${pageContext.request.contextPath}/ingrediente/eliminar?id=${ingrediente.id}&idReceta=${receta.id}">
+											<i class="far fa-trash-alt"></i>
+										</a>
+									</form>
+								</td>
+								
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -74,10 +82,14 @@
 					</select> <input type="number" name="cantidad" value="0" /> <input
 						type="submit" value="Anadir ingrediente a receta" name="guardar" />
 				</form>
+				<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
 
 
 			</div>
 		</div>
 	</div>
+	<%@ include file="/partes/third_party/javascripts.jsp"%>
 </body>
 </html>
