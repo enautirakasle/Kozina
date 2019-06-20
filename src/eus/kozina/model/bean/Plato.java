@@ -68,14 +68,21 @@ public class Plato {
 	}
 	
 	public void deleteReceta(Receta receta) {
-		this.recetas.remove(this.recetas.indexOf(receta));
+		//if(this.recetas.indexOf(receta) > 0) this.recetas.remove(this.recetas.indexOf(receta));
+		try {
+			this.recetas.remove(this.recetas.indexOf(receta));
+		}catch (IndexOutOfBoundsException e) {
+			//e.printStackTrace();
+			System.out.println("La receta " + receta + " no esta en el plato");
+		}
+		
 	}
 
 	@Override
 	public String toString() {
 		//TODO hobetu
 		return "Plato [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", en_carta=" + en_carta
-				+ ", en_menu=" + en_menu + ", recetas=" + recetas + "]";
+				+ ", en_menu=" + en_menu + ", \n\trecetas=" + recetas + "]";
 	}
 	
 	
