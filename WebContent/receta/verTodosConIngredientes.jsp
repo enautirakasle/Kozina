@@ -9,7 +9,7 @@
 <%@ include file="/partes/third_party/styles.jsp"%>
 </head>
 <body>
-
+	<%@ include file="/partes/header.jsp"%>
 	<div class="container">
 		<div class="row">
 			<div class="col">
