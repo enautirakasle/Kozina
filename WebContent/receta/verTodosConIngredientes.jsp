@@ -70,5 +70,6 @@
 			</div>
 		</div>
 	</div>
+	<%@ include file="/partes/third_party/javascripts.jsp"%>
 </body>
 </html>
