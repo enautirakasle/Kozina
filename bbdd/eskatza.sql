@@ -197,7 +197,7 @@ INSERT INTO `recetas` (`id`, `nombre`, `descripcion`, `elavoracion`) VALUES
 CREATE TABLE `servicios` (
   `id` int(11) NOT NULL,
   `fecha` int(11) NOT NULL,
-  `comida` enum('comida','cena','','') COLLATE utf8_unicode_ci NOT NULL,
+  `hora_de_comer` enum('comida','cena','','') COLLATE utf8_unicode_ci NOT NULL,
   `menu_id` int(11) NOT NULL COMMENT 'el id del menu que se ofrece en un servicio'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
