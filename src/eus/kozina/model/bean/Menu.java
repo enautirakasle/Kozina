@@ -45,5 +45,11 @@ public class Menu {
 	public void addPostre(Plato plato) {
 		this.postres.add(plato);
 	}
+	@Override
+	public String toString() {
+		//TODO hobetu
+		return "Menu [id=" + id + ", primeros=" + primeros + ", segundos=" + segundos + ", postres=" + postres + "]";
+	}
+	
 	
 }

@@ -72,6 +72,11 @@ public class Alimento{
 	public void setImagenBase64(String imagenBase64) {
 		this.imagenBase64 = imagenBase64;
 	}
+
+	@Override
+	public String toString() {
+		return "Alimento [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
+	}
 	
 	
 	
