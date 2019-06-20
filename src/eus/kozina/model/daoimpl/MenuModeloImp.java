@@ -67,19 +67,36 @@ public class MenuModeloImp extends Conector implements MenuModelo{
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("delete from menus where id=?");
+			pst.setInt(1, id);
+			pst.execute();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
-	public int update(Menu alimento) {
-		// TODO Auto-generated method stub
+	public int update(Menu menu) {
+		// TODO ez dauka erabiltzeko itxurarik disenuan erabaki zer egin honekin
 		return 0;
 	}
 
 	@Override
 	public void insert(Menu menu) {
-		// TODO Auto-generated method stub
+		try {
+			Statement st = this.conexion.createStatement();
+//			PreparedStatement pst = this.conexion.prepareStatement("insert into menu");
+//			pst.setString(1, alimento.getNombre());
+//			pst.setString(2, alimento.getDescripcion());
+			st.execute("insert into menus (id) values (null)");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
