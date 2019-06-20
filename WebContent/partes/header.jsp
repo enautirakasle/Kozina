@@ -12,7 +12,19 @@
 			<li class="nav-item mr-4"><a class="btn btn-primary"
 				href="${pageContext.request.contextPath}/alimentos">Ver
 					alimentos</a></li>
+			
+			<li class="nav-item mr-4"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/menu/crear"><i
+					class="fas fa-plus"></i> Menu </a></li>
+			
+			<li class="nav-item mr-4"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/plato/crear"><i
+					class="fas fa-plus"></i> Plato </a></li>
 
+			<li class="nav-item mr-4"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/receta/crear"><i
+					class="fas fa-plus"></i> Receta </a></li>
+			
 			<li class="nav-item mr-4"><a class="btn btn-primary"
 				href="${pageContext.request.contextPath}/alimento/crear"><i
 					class="fas fa-plus"></i> Alimento </a></li>
