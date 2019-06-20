@@ -5,7 +5,7 @@ import java.util.Date;
 public class Servicio {
 private int id;
 private Date fecha;
-private Comida comida;
+private HoraDeComer horaDeComer;
 private Menu menu;
 
 
