@@ -10,8 +10,18 @@
 					las recetas</a></li>
 
 			<li class="nav-item mr-4"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/menus">Ver
+					menus</a></li>
+			<li class="nav-item mr-4"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/platos">Ver
+					platos</a></li>
+			<li class="nav-item mr-4"><a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/recetas">Ver
+					recetas</a></li>
+			<li class="nav-item mr-4"><a class="btn btn-primary"
 				href="${pageContext.request.contextPath}/alimentos">Ver
 					alimentos</a></li>
+					
 			
 			<li class="nav-item mr-4"><a class="btn btn-primary"
 				href="${pageContext.request.contextPath}/menu/crear"><i
