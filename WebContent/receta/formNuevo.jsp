@@ -12,18 +12,28 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
+		<h2>Editar un plato</h2>
+			<p>Cambiar y guardar</p>
+			
 			<form action="${pageContext.request.contextPath}/receta/guardar" method="POST">
 				
-				<label for="nombre">Nombre</label>
-		  		<input type="text" name="nombre" id="nombre" value=""/><br>
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="form-control" name="nombre" id="nombre" value="" placeholder="Introduce el nombre">
+				</div>
+
+				<div class="form-group">
+					<label for="descripcion">DescripciÃ³n</label>
+					<textarea class="form-control" name="descripcion" id="descripcion" rows="3">${receta.descripcion}</textarea>
+				</div>
 		  		
-		  		<label for="nombre">Descripción</label>
-		  		<input type="text" name="descripcion" id="descripcion" value=""/><br>
+				<div class="form-group">
+					<label for="descripcion">ElavoraciÃ³n</label>
+					<textarea class="form-control" name="elavoracion" id="elavoracion" rows="3">${receta.elavoracion}</textarea>
+				</div>
 		  		
-		  		<label for="nombre">Elavoración</label>
-		  		<input type="text" name="elavoracion" id="elavoracion" value=""/><br>
-		  		
-				<input type="submit" value="Guardar" name="guardar"/>
+				<button id="guardarReceta" name="guardar" type="submit" class="btn btn-primary">Guardar receta</button>
+				
 			</form>
 			</div>
 		</div>

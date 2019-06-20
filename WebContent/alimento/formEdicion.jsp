@@ -13,18 +13,22 @@
 	<div class="row">
 		<div class="col">
 			<h2>Edicion de alimento</h2>
-			<p>Editar y guardar</p>
+			<p>Cambiar y guardar</p>
 			
 			<form action="${pageContext.request.contextPath}/alimento/cambiar" method="POST">
 				<input type="hidden" name="id" value="${alimento.id}"/>
 				
-				<label for="nombre">Nombre</label>
-		  		<input type="text" maxlength="32" size="32" name="nombre" id="nombre" value="${alimento.nombre}"/><br>
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="form-control" name="nombre" id="nombre" value="${alimento.nombre}" placeholder="Introduce el nombre">
+				</div>
+
+				  <div class="form-group">
+				    <label for="descripcion">Descripciï¿½n</label>
+				    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+				  </div>
 		  		
-		  		<label for="nombre">Descripción</label>
-		  		<input type="text" maxlength="128" size="100" name="descripcion" id="descripcion" value="${alimento.descripcion}"/><br>
-		  		
-				<input type="submit" value="Guardar" name="guardar"/>
+				  <button id="guardarAlimento" name="guardar" type="submit" class="btn btn-primary">Guardar alimento</button>
 			</form>
 		</div>
 	</div>

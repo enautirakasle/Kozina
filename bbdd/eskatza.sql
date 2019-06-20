@@ -80,7 +80,8 @@ CREATE TABLE `componente_menu` (
 CREATE TABLE `composicion_plato` (
   `id` int(11) NOT NULL,
   `plato_id` int(11) NOT NULL,
-  `receta_id` int(11) NOT NULL
+  `receta_id` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL COMMENT 'cantidad en gramos'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------

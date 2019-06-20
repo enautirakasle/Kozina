@@ -12,15 +12,26 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<form action="${pageContext.request.contextPath}/alimento/guardar" method="POST">
+			<h2>Crear nuevo alimento</h2>
+			<p>Crear y guardar</p>
+			<form action="${pageContext.request.contextPath}/alimento/guardar" method="POST" enctype="multipart/form-data">
 				
-				<label for="nombre">Nombre</label>
-		  		<input type="text" name="nombre" id="nombre" value=""/><br>
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="form-control" name="nombre" id="nombre" value="" placeholder="Introduce el nombre">
+				</div>
 		  		
-		  		<label for="nombre">Descripción</label>
-		  		<input type="text" name="descripcion" id="descripcion" value=""/><br>
+				<div class="form-group">
+					<label for="descripcion">Descripción</label>
+					<textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+				</div>
+				
+				<div class="form-group">
+    				<label for="imagen">Imagen de alimento</label>
+    				<input type="file" class="form-control-file" id="imagen" name="imagen">
+  				</div>
 		  		
-				<input type="submit" value="Guardar" name="guardar"/>
+				<button id="guardarAlimento" name="guardar" type="submit" class="btn btn-primary">Guardar alimento</button>
 			</form>
 			</div>
 		</div>
