@@ -118,7 +118,6 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 			pst.setString(2, alimento.getDescripcion());
 			pst.execute();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
