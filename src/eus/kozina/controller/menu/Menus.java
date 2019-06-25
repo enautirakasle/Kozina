@@ -15,7 +15,7 @@ import eus.kozina.model.daoimpl.MenuModeloImp;
  * Servlet implementation class alimentos
  * visualiza todos los alimentos
  */
-@WebServlet("/alimentos")
+@WebServlet("/menus")
 public class Menus extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
