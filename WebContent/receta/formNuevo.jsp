@@ -31,6 +31,31 @@
 					<label for="descripcion">Elavoración</label>
 					<textarea class="form-control" name="elavoracion" id="elavoracion" rows="3">${receta.elavoracion}</textarea>
 				</div>
+				
+				<div>
+					<table class="table table-striped">
+					  <thead>
+					    <tr>
+					      <th scope="col">id</th>
+					      <th scope="col">Nombre</th>
+					      <th scope="col">Variedad</th>
+					      <th scope="col">Cantidad</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  <c:forEach items="${alimentos}" var="alimento">
+					    <tr>
+						    <td>${alimento.id }</td>
+						    <td>${alimento.nombre }</td>
+						    <td>${alimento.variedad }</td>
+						    <td><input type="text" name="cantidad[]"/> <input type="checkbox" value="${alimento.id }" name="elegido[]"/>Elegido</td>
+						    
+					    </tr>
+					    
+					    </c:forEach>
+					    </tbody>
+					    </table>
+				    </div>
 		  		
 				<button id="guardarReceta" name="guardar" type="submit" class="btn btn-primary">Guardar receta</button>
 				
