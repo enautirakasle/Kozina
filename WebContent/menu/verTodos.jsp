@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Alimentos - Eskatza</title>
+<title>Menus - Eskatza</title>
 <%@ include file="/partes/third_party/styles.jsp"%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/styles.css" />
@@ -24,20 +24,20 @@
 					<thead>
 						<tr>
 							<th>id</th>
-							<th>nombre</th>
-							<th>descripcion</th>
-							<th>accion</th>
+							<th>primeros</th>
+							<th>segundos</th>
+							<th>postres</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${alimentos}" var="alimento">
+						<c:forEach items="${menus}" var="menu">
 							<tr>
-								<td>${alimento.id}</td>
-								<td>${alimento.nombre}</td>
-								<td>${alimento.descripcion}</td>
-								<td><a href="alimento/ver?id=${alimento.id}">Ver</a> <a
-									href="alimento/editar?id=${alimento.id}">Editar</a> <a
-									href="alimento/eliminar?id=${alimento.id}">Eliminar</a></td>
+								<td>${menu.primeros}</td>
+								<td>${menu.segundos}</td>
+								<td>${menu.postres}</td>
+								<td><a href="menu/ver?id=${menu.id}">Ver</a> <a
+									href="menu/editar?id=${menu.id}">Editar</a> <a
+									href="menu/eliminar?id=${menu.id}">Eliminar</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
