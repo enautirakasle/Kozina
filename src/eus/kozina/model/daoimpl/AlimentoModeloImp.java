@@ -32,6 +32,7 @@ public class AlimentoModeloImp extends Conector implements AlimentoModelo {
 			while (rs.next()) {
 				 Alimento alimento = new Alimento(rs.getString("nombre"));
 				 alimento.setId(rs.getInt("id"));
+				 alimento.setVariedad(rs.getString("variedad"));
 				 alimento.setDescripcion(rs.getString("descripcion"));
 				 alimento.setImagenBlob(rs.getBinaryStream("foto"));
 				 alimento.setImagenBase64(rs.getString("fotob64"));

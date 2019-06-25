@@ -11,6 +11,7 @@ public class Alimento{
 
 	private int id;
 	private String nombre;
+	private String variedad;
 	private String descripcion;
 	private InputStream imagenBlob;
 	private String imagenBase64;
@@ -48,6 +49,15 @@ public class Alimento{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public String getVariedad() {
+		return variedad;
+	}
+
+	public void setVariedad(String variedad) {
+		this.variedad = variedad;
+	}
+
 
 	public String getDescripcion() {
 		return descripcion;
@@ -77,6 +87,8 @@ public class Alimento{
 	public String toString() {
 		return "Alimento [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
 	}
+
+
 	
 	
 	
