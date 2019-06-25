@@ -88,34 +88,28 @@ public class MenuModeloImp extends Conector implements MenuModelo{
 	public void insert(Menu menu) {
 		try {
 			Statement st = this.conexion.createStatement();
-//			PreparedStatement pst = this.conexion.prepareStatement("insert into menu");
-//			pst.setString(1, alimento.getNombre());
-//			pst.setString(2, alimento.getDescripcion());
 			st.execute("insert into menus (id) values (null)");
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		
 	}
 
 	@Override
-	public ArrayList<Plato> getPrimeros(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Plato> getPrimeros(int idMenu) {
+		return this.getPrimeros(idMenu);
 	}
 
 	@Override
-	public ArrayList<Plato> getSegundos(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Plato> getSegundos(int idMenu) {
+		return this.getSegundos(idMenu);
 	}
 
 	@Override
-	public ArrayList<Plato> getPostres(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Plato> getPostres(int idMenu) {
+		return this.getPostres(idMenu);
 	}
 	
 
