@@ -99,16 +99,20 @@ public class MenuModeloImp extends Conector implements MenuModelo{
 
 	@Override
 	public ArrayList<Plato> getPrimeros(int idMenu) {
+		//TODO egiteko lehenago plato egin
+		//PreparedStatement pst = this.conexion.prepareStatement("select ");
 		return this.getPrimeros(idMenu);
 	}
 
 	@Override
 	public ArrayList<Plato> getSegundos(int idMenu) {
+		//TODO egiteko lehenago plato egin
 		return this.getSegundos(idMenu);
 	}
 
 	@Override
 	public ArrayList<Plato> getPostres(int idMenu) {
+		//TODO egiteko lehenago plato egin
 		return this.getPostres(idMenu);
 	}
 	
