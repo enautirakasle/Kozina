@@ -1,6 +1,9 @@
 package eus.kozina.controller.receta;
 
 import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +25,6 @@ public class GuardarReceta extends HttpServlet {
      */
     public GuardarReceta() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -37,9 +39,12 @@ public class GuardarReceta extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Enumeration<String> en = request.getParameterNames();
+		Map<String, String[]> mapa= request.getParameterMap();
 		String nombre = request.getParameter("nombre");
 		String descripcion = request.getParameter("descripcion");
 		String elavoracion = request.getParameter("elavoracion");
+		Object cantidades = request.getParameter("cantidad[]");
 		
 		Receta receta = new Receta(nombre);
 		receta.setDescripcion(descripcion);
