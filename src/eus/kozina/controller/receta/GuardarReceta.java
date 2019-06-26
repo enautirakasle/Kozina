@@ -70,9 +70,9 @@ public class GuardarReceta extends HttpServlet {
 
 		
 		RecetaModeloImp recetaModelo = new RecetaModeloImp();
-		recetaModelo.insert(receta);
 		
-		int id = recetaModelo.getId(receta.getNombre());
+		
+		int id = recetaModelo.insert(receta);
 		
 		response.sendRedirect(request.getContextPath() + "/receta/editar?id=" + id);
 		
@@ -88,6 +88,7 @@ public class GuardarReceta extends HttpServlet {
 				cantidades[i] = "";
 				return Integer.parseInt(id);
 			}
+			i++;
 		}
 		return -1;
 	}
