@@ -114,8 +114,9 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 	}
 
 	@Override
-	public void insert(Receta receta) {
+	public int insert(Receta receta) {
 		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
+		int recetaId = 0;
 		
 		try {
 			PreparedStatement pst = this.conexion.prepareStatement("insert into recetas (nombre, descripcion, elavoracion) values (?, ?, ?)");
@@ -124,9 +125,9 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 			pst.setString(3, receta.getElavoracion());
 			pst.execute();
 			
-			pst = this.conexion.prepareStatement("get_last_insert_id()");
+			pst = this.conexion.prepareStatement("SELECT LAST_INSERT_ID() as id;");
 			ResultSet rs = pst.executeQuery();
-			int recetaId = 0;
+			
 			if(rs.next()) recetaId = rs.getInt("id");
 			
 			ArrayList<Ingrediente> ingredientes = receta.getIngredientes();
@@ -140,6 +141,7 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return recetaId;
 	}
 
 	@Override
