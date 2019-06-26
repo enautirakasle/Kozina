@@ -16,6 +16,14 @@ public class Ingrediente {
 		this.alimento = alimento;
 		this.receta = receta;
 	}
+	
+	public Ingrediente(int cantidad, Alimento alimento) {
+		super();
+		this.cantidad = cantidad;
+		this.alimento = alimento;
+	}
+	
+	
 
 	public int getId() {
 		return id;
