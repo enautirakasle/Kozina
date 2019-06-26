@@ -13,6 +13,7 @@ public class Receta {
 	
 	public Receta(String nombre) {
 		this.nombre = nombre;
+		this.ingredientes = new ArrayList<Ingrediente>();
 	}
 
 	public int getId() {
@@ -59,6 +60,11 @@ public class Receta {
 	public String toString() {
 		return "Receta [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", elavoracion="
 				+ elavoracion + ", ingredientes=" + ingredientes + "]";
+	}
+
+	public void addIngrediente(Ingrediente ingrediente) {
+		this.ingredientes.add(ingrediente);
+		
 	}
 
 

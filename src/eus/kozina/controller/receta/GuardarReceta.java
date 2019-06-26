@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import eus.kozina.model.bean.Alimento;
 import eus.kozina.model.bean.Ingrediente;
 import eus.kozina.model.bean.Receta;
+import eus.kozina.model.daoimpl.AlimentoModeloImp;
 import eus.kozina.model.daoimpl.RecetaModeloImp;
 
 /**
@@ -55,16 +56,18 @@ public class GuardarReceta extends HttpServlet {
 		
 		ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
 		Alimento alimentoAux;
-		
-		for (int i = 0; i < cantidades.length; i++) {
-			if(cantidades[i].length()>0) {
-				System.out.println(cantidades[i]);
-			}
-		}
-		
+		Ingrediente ingredienteAux;
 		Receta receta = new Receta(nombre);
 		receta.setDescripcion(descripcion);
 		receta.setElavoracion(elavoracion);
+		AlimentoModeloImp alimentoModelo = new AlimentoModeloImp();
+		
+		for (int i = 0; i < elegidos.length; i++) {
+			ingredienteAux = new Ingrediente(getPrimerCantidad(cantidades), alimentoModelo.select(Integer.parseInt(elegidos[i])));
+			receta.addIngrediente(ingredienteAux);
+		}
+		
+
 		
 		RecetaModeloImp recetaModelo = new RecetaModeloImp();
 		recetaModelo.insert(receta);
@@ -75,7 +78,18 @@ public class GuardarReceta extends HttpServlet {
 		
 		
 		
-		
+	}
+	
+	public int getPrimerCantidad(String[] cantidades) {
+		int i = 0;
+		while(cantidades.length>i) {
+			if(cantidades[i].length()>0) {
+				String id = cantidades[i];
+				cantidades[i] = "";
+				return Integer.parseInt(id);
+			}
+		}
+		return -1;
 	}
 
 }

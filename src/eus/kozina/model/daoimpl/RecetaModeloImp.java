@@ -5,9 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import eus.kozina.model.Conector;
 import eus.kozina.model.bean.Alimento;
+import eus.kozina.model.bean.Ingrediente;
 import eus.kozina.model.bean.Receta;
 import eus.kozina.model.dao.RecetaModelo;
 
@@ -113,12 +115,28 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 
 	@Override
 	public void insert(Receta receta) {
+		IngredienteModeloImp ingredienteModelo = new IngredienteModeloImp();
+		
 		try {
 			PreparedStatement pst = this.conexion.prepareStatement("insert into recetas (nombre, descripcion, elavoracion) values (?, ?, ?)");
 			pst.setString(1, receta.getNombre());
 			pst.setString(2, receta.getDescripcion());
 			pst.setString(3, receta.getElavoracion());
 			pst.execute();
+			
+			pst = this.conexion.prepareStatement("get_last_insert_id()");
+			ResultSet rs = pst.executeQuery();
+			int recetaId = 0;
+			if(rs.next()) recetaId = rs.getInt("id");
+			
+			ArrayList<Ingrediente> ingredientes = receta.getIngredientes();
+			Iterator<Ingrediente> i = ingredientes.iterator();
+			while (i.hasNext()) {
+				Ingrediente ingrediente = (Ingrediente) i.next();
+				ingredienteModelo.addIngrediente(recetaId, ingrediente.getAlimento().getId(), ingrediente.getCantidad());
+				
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
