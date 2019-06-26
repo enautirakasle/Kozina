@@ -44,7 +44,8 @@ public class GuardarReceta extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String descripcion = request.getParameter("descripcion");
 		String elavoracion = request.getParameter("elavoracion");
-		Object cantidades = request.getParameter("cantidad[]");
+		String[] cantidades = request.getParameterValues("cantidad");
+		String[] elegidos = request.getParameterValues("elegido");
 		
 		Receta receta = new Receta(nombre);
 		receta.setDescripcion(descripcion);
