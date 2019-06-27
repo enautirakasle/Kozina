@@ -10,6 +10,7 @@ import java.util.Iterator;
 import eus.kozina.model.Conector;
 import eus.kozina.model.bean.Alimento;
 import eus.kozina.model.bean.Ingrediente;
+import eus.kozina.model.bean.Plato;
 import eus.kozina.model.bean.Receta;
 import eus.kozina.model.dao.RecetaModelo;
 
@@ -160,6 +161,33 @@ public class RecetaModeloImp extends Conector implements RecetaModelo {
 		}
 		
 		return 0;
+	}
+
+	
+	
+	//TODO hau beste modelo baten agian Recetak bueltatuko ditu baina kantidadekin, hau da componente plato izango litzatekena
+	public ArrayList<Receta> selectRecetas(Plato plato) {
+		ArrayList<Receta> recetas = new ArrayList<Receta>();
+
+		try {
+			PreparedStatement pst = this.conexion.prepareStatement("select recetas.* , composicion_plato.cantidad, platos.id as id_plato from platos join composicion_plato on platos.id=composicion_plato.plato_id join recetas on composicion_plato.receta_id = recetas.id  where platos.id = ?");
+			pst.setInt(1, plato.getId());
+			
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				 Receta receta = new Receta(rs.getString("nombre"));
+				 receta.setId(rs.getInt("id"));
+				 receta.setDescripcion(rs.getString("descripcion"));
+				 receta.setElavoracion(rs.getString("elavoracion"));
+				 
+				 recetas.add(receta);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return recetas;
 	}
 
 
