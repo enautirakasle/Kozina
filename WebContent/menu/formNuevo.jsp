@@ -14,7 +14,7 @@
 		<div class="col">
 			<h2>Crear nuevo alimento</h2>
 			<p>Crear y guardar</p>
-			<form action="${pageContext.request.contextPath}/alimento/guardar" method="POST" enctype="multipart/form-data">
+			<form action="${pageContext.request.contextPath}/menu/guardar" method="POST">
 				
 				<div class="form-group">
 					<label for="nombre">Nombre</label>
@@ -31,7 +31,7 @@
     				<input type="file" class="form-control-file" id="imagen" name="imagen">
   				</div>
 		  		
-				<button id="guardarAlimento" name="guardar" type="submit" class="btn btn-primary">Guardar alimento</button>
+				<button id="guardarMenu" name="guardar" type="submit" class="btn btn-primary">Guardar menu</button>
 			</form>
 			</div>
 		</div>

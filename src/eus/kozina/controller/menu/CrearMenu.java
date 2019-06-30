@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import eus.kozina.model.dao.PlatoModelo;
+import eus.kozina.model.daoimpl.PlatoModeloImp;
 
 /**
  * Servlet implementation class CrearMenu
@@ -28,7 +29,9 @@ public class CrearMenu extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PlatoModelo platoModelo = new PlatosModeloImp();
+		PlatoModelo platoModelo = new PlatoModeloImp();
+		request.setAttribute("platos", platoModelo.selectAll());
+		request.getRequestDispatcher("menu/formNuevo.jsp").forward(request, response);
 		
 	}
 
