@@ -9,6 +9,13 @@ public class Plato {
 	private boolean en_carta;
 	private boolean en_menu;
 
+	public Plato() {
+		
+	}
+	public Plato(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	private ArrayList<Receta> recetas = new ArrayList<Receta>();
 
 	
