@@ -40,14 +40,15 @@ public class ApiAlimento extends HttpServlet {
 		AlimentoModeloImp alimentoModelo =new AlimentoModeloImp();
 		Alimento alimento = alimentoModelo.select(idAlimento);
 		
-		JSONObject jsonAlimento = new JSONObject(alimento);
+		JSONObject jsonObject = new JSONObject(alimento);
+		
 		PrintWriter out = response.getWriter();
 		
 		response.setHeader("Access-Control-Allow-Origin","*"); //jsonp deia denean ez da behar
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		
-		out.print(jsonAlimento);
+		out.print(jsonObject);
 		out.flush();
 	}
 
